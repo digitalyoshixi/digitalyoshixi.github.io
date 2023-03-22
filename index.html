@@ -1,1 +1,79 @@
-<div>HElll</div>
+<html class="client-js" lang="en" dir="ltr">
+    
+<head>
+
+
+    <meta charset="UTF-8">
+    <title>Davids Portfolio - Home</title>
+    <meta desc="" content="">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function updateTime() {
+          var currentTime = new Date();
+          var hours = currentTime.getHours();
+          var minutes = currentTime.getMinutes();
+          var seconds = currentTime.getSeconds();
+          var meridiem = "AM";
+          // Convert to 12-hour time format
+          if (hours > 12) {
+            hours -= 12;
+            meridiem = "PM";
+          }
+          if (hours === 0) {
+            hours = 12;
+          }
+          // Add leading zeros to minutes and seconds
+          if (minutes < 10) {
+            minutes = "0" + minutes;
+          }
+          if (seconds < 10) {
+            seconds = "0" + seconds;
+          }
+          // Build the time string
+          var timeString = hours + ":" + minutes + ":" + seconds + " " + meridiem;
+          // Update the HTML element with the time string
+          document.getElementById("time").innerHTML = timeString;
+        }
+        // Call the updateTime function every second
+        setInterval(updateTime, 1000);
+      </script>
+    
+    
+    
+    
+</head>
+
+
+<body>
+    
+        
+    <div class="header">
+
+        <div class="container">
+            <div class="left-div">David's Portfolio</div>
+            <div class="center-div"id="time"></div>
+            <div class="right-div">
+                <span>
+                    github
+                </span>
+                <span>
+                    youtube
+                </span>
+
+            </div>
+          </div>
+
+
+        
+        
+        
+    </div>
+    
+
+
+
+</body>
+    
+
+
+</html>
