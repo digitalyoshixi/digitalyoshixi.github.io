@@ -60,6 +60,8 @@ body {
   border-radius: 20%;
   margin: auto;
   margin-top: 8px;
-  
 }
 
+.searchbox:hover {
+  background-color: rebeccapurple;
+}
