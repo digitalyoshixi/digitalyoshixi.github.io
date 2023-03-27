@@ -51,17 +51,21 @@ body {
     height: 100%;
   }
 
+
 .searchbox {
   width: 20%;
   height: 30px;
   padding: 0;
   display: block;
-  background-color: rgb(202, 202, 202);
   border-radius: 20%;
   margin: auto;
   margin-top: 8px;
+  background-color: rgb(202, 202, 202);
 }
 
-.searchbox:hover {
-  background-color: rebeccapurple;
+.searchbox:hover{
+  opacity: 50%;
+  cursor: pointer;
+ 
 }
+
