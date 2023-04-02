@@ -52,20 +52,6 @@ body {
   }
 
 
-.searchbox {
-
-  display: block;
-  border-radius: 20%;
-  margin: auto;
-  margin-top: 8px;
-  background-color: rgb(202, 202, 202);
-}
-
-.searchbox:hover{
-  opacity: 50%;
-  cursor: pointer;
- 
-}
 
 * {
   box-sizing: border-box;
@@ -75,7 +61,7 @@ body {
 form{
   position: absolute;
   right: 0;
-  top: 6%;
+  top: 9%;
   width: 100%;
   text-align: center;
 }
@@ -84,7 +70,7 @@ form{
 form.example input[type=text] {
   width: 15%;
   height: 30px;
-  padding: 10px; 
+  padding: 1%; 
   font-size: 17px;
   background: #f1f1f1;
   max-width: 40%;
@@ -111,7 +97,7 @@ form.example input[type=text] {
   }
     .pagebubble{
       width: 10%;
-      height: 20px;
+      height: 50%;
       float:left;
       position: relative;
       top:20%;
@@ -121,3 +107,4 @@ form.example input[type=text] {
       border-style: solid;
       border-width: 0px;
     }
+  
