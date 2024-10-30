@@ -13,3 +13,30 @@ app.get("/", (req, res) => {
   res.status(200).sendFile(path.join(__dirname,'..', 'client', 'index.html'))
 })
 
+app.get("/projects", (req, res) => {
+  console.log(req);
+  res.status(200).sendFile(path.join(__dirname,'..', 'client', 'projects.html'))
+})
+
+app.get("/ctfs", (req, res) => {
+  console.log(req);
+  res.status(200).sendFile(path.join(__dirname,'..', 'client', 'na.html'))
+})
+
+
+app.get("/rice", (req, res) => {
+  console.log(req);
+  res.status(200).sendFile(path.join(__dirname,'..', 'client', 'na.html'))
+})
+
+
+app.get("/resume", (req, res) => {
+  console.log(req);
+  res.status(200).sendFile(path.join(__dirname,'..', 'client', 'na.html'))
+})
+
+
+app.get("/quartz", (req, res) => {
+  console.log(req);
+  res.status(200).sendFile(path.join(__dirname,'..', 'client', 'na.html'))
+})
