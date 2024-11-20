@@ -7,7 +7,7 @@ title:            yoshixi.web
 tagline:          'Portfolio'
 description:      'Hi this is my repository where i post writups about personal projects, competitions, and blog posts'
 url:              https://fongandrew.github.io
-baseurl:          '/'
+baseurl:          '/david_portfolio'
                   # the optional subpath of your site, e.g. "/blog"
                   # NB: This applies to all pages in your Jekyll site.
                   # If you want to move just the blog index pages but keep
