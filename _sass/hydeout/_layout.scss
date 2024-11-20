@@ -53,6 +53,11 @@ body {
   padding: $section-spacing;
 }
 
+.flexrow {
+  display : flex;
+  justify-content: space-between;
+}
+
 // Container is flexbox as well -- we want content div to stretch and fill
 .container {
   display: flex;
@@ -329,8 +334,27 @@ body {
 }
 
 .sidebar-image {
+  min-width:10%;
   max-width: 70%;
   margin: 0 auto 1rem;
   display: block;
   border-radius: 50%;
+  flex-direction: column;
+  flex : 0 0 auto;
+}
+
+
+.small-image {
+  max-width: 20%;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 10%;
+}
+.med-image {
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  padding: 10px;
+  display: block;
+  border-radius: 10%;
 }

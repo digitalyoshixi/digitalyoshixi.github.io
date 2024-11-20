@@ -1,12 +1,19 @@
 ---
-layout: default
+layout: page
 ---
+<div class="flexrow">
+  <div  width="30%">
+    Hey everyone, I'm David. I am a systems programmer and low-level security enthusiast. <br/><br/>
+    <i class="fa-solid fa-graduation-cap"></i>
+    {% include svg/school.svg %} I am in my first year of CS + Maths at the University of Toronto. <br/> <br />
+    {% include svg/hand.svg %} I am an ergonomics & productivity freak, everyday I am trying out new tools and workspaces to optimize my workflow.<br><br>
 
-<header>
-  {% include back-link.html %}
-  <h1 class="page-title">{{ page.title }}</h1>
-</header>
 
-<hr/>
-  {{ content }}
-<hr/>
+
+  </div>
+  <img src="/assets/images/profile.jpg" class="med-image"/>
+</div>
+ {{content}}
+
+
+{% include back-link.html %}
