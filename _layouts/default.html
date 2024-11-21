@@ -1,16 +1,143 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: 'en-us'}}">
 
-  {% include head.html %}
+  <link href="https://gmpg.org/xfn/11" rel="profile" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 
-  <body class="{{ page.layout }}{% if page.url == '/' %} home{% endif %}">
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
 
-    {% include sidebar.html %}
+  <title>
+    {% if page.title == "Home" %}
+      {{ site.title }}{% if site.tagline %} &middot; {{ site.tagline }}{% endif %}
+    {% else %}
+      {{ page.title }} &middot; {{ site.title }}
+    {% endif %}
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+
+
+
+
+
+  <div id="sidebar">
+    <header>
+      <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Sidebar image" class="sidebar-image"/>
+      <{% if page.layout == "index" %}h1{% else %}div{% endif %} class="site-title">
+        <a href="{{ "/" | relative_url }}">
+          {% unless page.url == "/" %}
+            <span class="back-arrow icon">{% include svg/back-arrow.svg %}</span>
+          {% endunless %}
+          {{ site.title }}
+        </a>
+      </{% if page.layout == "index" %}h1{% else %}div{% endif %}>
+      <p class="lead">{{ site.description }}</p>
+    </header>
+
+    <nav id="sidebar-nav-links">
+      {% if site.sidebar_home_link %}
+        <a class="home-link {% if page.url == '/' %} active{% endif %}"
+            href="{{ "/" | relative_url }}">Home</a>
+      {% endif %}
+      {% if site.sidebar_blog_link %}
+        <a class="page-link {% if page.url == site.sidebar_blog_link %} active{% endif %}"
+    	href="{{ site.sidebar_blog_link | relative_url }}">Blog</a>
+      {% endif %}
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `sidebar_link: true` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+    {% comment %}
+      The code below dynamically generates a sidebar nav of pages with
+      `sidebar_link: true` in the front-matter. See readme for usage.
+    {% endcomment %}
+    {% assign pages_list = site.pages|sort:"sidebar_sort_order" %}
+    {% for node in pages_list %}
+      {% if node.title != null %}
+        {% if node.sidebar_link %}
+          <a class="page-link {% if page.url == node.url %} active{% endif %}"
+              href="{{ node.url | relative_url }}">{% if node.short_title != null %}{{ node.short_title }}{% else %}{{ node.title }}{% endif %}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+    
+    </nav>
+
+    {% if site.version %}
+      <span class="site-version">Currently v{{ site.version }}</span>
+    {% endif %}
+
+    <nav id="sidebar-icon-links">
+
+      <a id="subscribe-link"
+         class="icon" title="Subscribe" aria-label="Subscribe"
+         href="{{ site.feed.path | default: 'feed.xml' | relative_url }}">
+        {% include svg/feed.svg %}
+      </a>
+
+
+      <a id="github-link"
+        class="icon" title="Github Project" aria-label="Github Project"
+        href="https://github.com/digitalyoshixi">
+        {% include svg/github.svg %}
+      </a>
+      {% comment %}
+        Check if we have tag or search pages page active before linking to it.
+      {% endcomment %}
+      {% assign tags_page = false %}
+      {% assign search_page = false %}
+      {% for node in site.pages %}
+        {% if node.layout == "tags" %}
+          {% assign tags_page = node %}
+        {% elsif node.layout == "search" %}
+          {% assign search_page = node %}
+        {% endif %}
+      {% endfor %}
+
+      {% if tags_page %}
+        <a id="tags-link"
+           class="icon{% if page.url == '/tags' %} active{% endif %}"
+           title="Tags" aria-label="Tags"
+           href="{{ tags_page.url | relative_url }}">
+          {% include svg/tags.svg %}
+        </a>
+      {% endif %}
+
+    </nav>
+
+
+    <p>
+      &copy; {{ site.time | date: '%Y' }}.
+      <a href="{{ "/LICENSE.md" | relative_url }}">MIT License.</a>
+    </p>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <main class="container">
       {{ content }}
     </main>
 
-    {% include custom-foot.html %}
   </body>
 </html>
