@@ -5,7 +5,7 @@ highlighter:      rouge
 # Setup
 title:            yoshixi.web
 tagline:          'Portfolio'
-description:      'Hi this is my repository where i post writups about personal projects, competitions, and blog posts'
+description:      'Hi this is my portfolio, blog and ctf/project writeup repository'
 url:              https://digitalyoshixi.github.io
 baseurl:          '/'
                   # the optional subpath of your site, e.g. "/blog"
