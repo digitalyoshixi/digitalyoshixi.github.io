@@ -336,13 +336,12 @@ body {
 .sidebar-image {
   min-width:10%;
   max-width: 70%;
-  margin: 0 auto 1rem;
+  margin: 0 ;
   display: block;
-  border-radius: 50%;
+  border-radius: 10%;
   flex-direction: column;
   flex : 0 0 auto;
 }
-
 
 .small-image {
   max-width: 20%;
