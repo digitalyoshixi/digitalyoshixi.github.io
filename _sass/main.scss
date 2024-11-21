@@ -2,7 +2,7 @@
   Most of these imports are derived from https://github.com/poole/poole.
   Designed, built, and released under MIT license by @mdo.
 */
-
+$fa-font-path: '../webfonts';
 
 $gray-1: #f9f9f9 !default;
 $gray-2: #e5e5e5 !default;
@@ -66,3 +66,6 @@ $sidebar-icon-color: rgba($sidebar-fg-color, 0.85) !default;
 
 @import 'base';
 @import 'layout';
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/solid';
+@import 'fontawesome/brands';
