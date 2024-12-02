@@ -4,7 +4,7 @@ import { useGLTF, OrbitControls } from '@react-three/drei';
 
 function Model({ path }) {
   const { scene } = useGLTF(path);
-  return <primitive object={scene} scale={[1.5, 1.5, 1.5]} />;
+  return <primitive object={scene} rotation={[0,4.7,0]} scale={[2, 2, 2]} />;
 }
 
 export default function Character() {

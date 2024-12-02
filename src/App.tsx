@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-    <PageLayout>
+    <PageLayout title="Home">
       Hello
     </PageLayout>
     </>
