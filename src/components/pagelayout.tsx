@@ -1,6 +1,9 @@
 import { ReactNode } from 'react';
 import Character from './character';
 import bgImage from '../assets/aiforest.jpeg'
+import githubImage from '../assets/github.png'
+import devpostImage from '../assets/devpost.png'
+import ctfImage from '../assets/ctftime.png'
 
 export default function PageLayout( { title, children }  : {children : ReactNode} ){
 
@@ -24,8 +27,12 @@ export default function PageLayout( { title, children }  : {children : ReactNode
                             <li><button className="hover:text-green-400">/3D-Models</button></li>
                         </ul>
                     </div> 
-                    <div className="flex-grow font-sourGummy bg-white rounded-lg w-full mb-[6%]">
-                        Links
+                    <div className="flex-grow font-sourGummy w-full mb-[6%]">
+                        <div className="w-full flex flex-row justify-center">
+                            <button><img src={githubImage} className="bg-black rounded-lg border-2 border-white mx-2 drop-shadow-white" alt="GitHub" /></button> 
+                            <button><img src={devpostImage} className="bg-black rounded-lg border-2 border-white mx-2 drop-shadow-white" alt="Devpost" /></button> 
+                            <button><img src={ctfImage} className="bg-black rounded-lg border-2 border-white mx-2 drop-shadow-white" alt="CTFTime" /></button> 
+                        </div>
                     </div> 
                 </div>
                 <div className="flex flex-col w-3/5">
