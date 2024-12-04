@@ -1,11 +1,10 @@
-import { ReactNode } from 'react';
 import Character from './character';
 import bgImage from '../assets/aiforest.jpeg'
 import githubImage from '../assets/github.png'
 import devpostImage from '../assets/devpost.png'
 import ctfImage from '../assets/ctftime.png'
 
-export default function PageLayout( { title, children }  : {children : ReactNode} ){
+export default function PageLayout( { title, children } ){
 
     return (
         <div className="bg-cover bg-center h-screen" style={{ backgroundImage: `url(${bgImage})` }}>
@@ -16,8 +15,8 @@ export default function PageLayout( { title, children }  : {children : ReactNode
                         <Character></Character>
                     </div> 
                     <div className="opacity-80 flex-none text-center text-white font-sourGummy bg-black border-2 border-white rounded-lg w-full h-[65%] mb-[5%]">
-                        <h1 className="text-2xl">Directory</h1>
-                        <ul className="text-1xl ">
+                        <h1 className="text-3xl">Directory</h1>
+                        <ul className="text-2xl ">
                             <li><button className="hover:text-green-400">~</button></li>
                             <li><button className="hover:text-green-400">/About</button></li>
                             <li><button className="hover:text-green-400">/Projects</button></li>

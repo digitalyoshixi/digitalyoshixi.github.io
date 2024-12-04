@@ -1,12 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+module.exports = {
+  mode: 'jit',
+  content: ['./app/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'], // remove unused styles in production
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
+    extend: {},
+  },
+  variants: {
     extend: {
       fontFamily: {
-        sourGummy: ["Sour Gummy", "sans-serif"],
-        acme: ["Acme", "sans-serif"],
-      },
+        sourGummy: ["var(--font-sour-gummy)", "serif"],
+        acme: ["var(--font-acme)", "serif"],
+      }
     },
   },
   plugins: [],
