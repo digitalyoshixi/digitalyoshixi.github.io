@@ -1,3 +1,4 @@
+'use client'
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls } from '@react-three/drei';
@@ -20,3 +21,5 @@ export default function Character() {
     </Canvas>
   );
 }
+
+

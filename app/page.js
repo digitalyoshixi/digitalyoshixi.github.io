@@ -1,6 +1,6 @@
-'use client'
+
 import PageLayout from "./components/pagelayout"
-export default function Page() {
+export default function Home() {
   return (
     <PageLayout title="Home">
       Hi im a child
