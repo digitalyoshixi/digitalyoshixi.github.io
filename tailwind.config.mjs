@@ -14,6 +14,9 @@ export default {
       fontFamily : {
         acme: ['var(--font-acme)'],
         sourgummy: ['var(--font-sourgummy)']
+      },
+      backgroundImage : {
+        'aiforest' : "url('/aiforest.jpeg')"
       }
     },
   },
