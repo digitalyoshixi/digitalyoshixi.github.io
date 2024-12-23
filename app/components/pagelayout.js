@@ -43,7 +43,7 @@ export default function PageLayout( { title, children } ){
                         </div>
                         <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
                             <h1 className="text-center font-sourgummy text-5xl">{title}</h1>
-                            <p className="font-acme">{children}</p>
+                            <div className="prose dark:prose-invert font-acme">{children}</div>
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">

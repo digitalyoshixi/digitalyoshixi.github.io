@@ -1,9 +1,10 @@
-
 import PageLayout from "../components/pagelayout"
-export default function Home() {
+import MyMDXContent from './page.mdx';
+
+export default function Page() {
   return (
     <PageLayout title="Projects">
-      Here are some projects I have worked on in the past:
+        <MyMDXContent/>
     </PageLayout>
   )
 }

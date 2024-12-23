@@ -1,9 +1,10 @@
-
 import PageLayout from "./components/pagelayout"
-export default function Home() {
+import MyMDXContent from './page.mdx';
+
+export default function Page() {
   return (
-    <PageLayout title="Home">
-      😀 Hi welcome to my lair.
+    <PageLayout className="prose dark:prose-invert" title="Home">
+      <MyMDXContent/>
     </PageLayout>
   )
 }
