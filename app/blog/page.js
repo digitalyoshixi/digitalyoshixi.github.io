@@ -5,7 +5,8 @@ export default function Home() {
   return (
     <>
     <PageLayout title="Blog">
-      This is about me!
+      This is my blog!!!
+
     </PageLayout>
     </>
   )

@@ -19,7 +19,6 @@ export default function CharacterModel() {
     window.addEventListener('mousemove', updateMousePosition);
     let movex = parseInt(mousePosition[0]) * 0.0012
     let movey = parseInt(mousePosition[1]) * 0.0012
-    console.log("hello", movex)
     setRot(prevRot => ({ ...prevRot, y:  4.7 + movex, z : 0 - movey}));
   });
 

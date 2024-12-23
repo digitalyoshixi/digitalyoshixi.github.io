@@ -41,8 +41,8 @@ export default function PageLayout( { title, children } ){
                         <div className="opacity-90 rounded-lg font-acme font-light text-4xl text-neutral-900 text-center flex-none h-[6%] w-[50%] mx-auto bg-white my-[2%]">
                             |Yoshixis Web|
                         </div>
-                        <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%]'>
-                            <h1 className="text-center font-sourgummy text-3xl">{title}</h1>
+                        <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
+                            <h1 className="text-center font-sourgummy text-5xl">{title}</h1>
                             <p className="font-acme">{children}</p>
                         </div>
                     </div>
