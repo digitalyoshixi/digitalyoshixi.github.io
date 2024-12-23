@@ -16,7 +16,7 @@ export default {
         sourgummy: ['var(--font-sourgummy)']
       },
       backgroundImage : {
-        'aiforest' : "url('/aiforest.jpeg')"
+        'aiforest' : "url('/images/aiforest.jpeg')",
       }
     },
   },

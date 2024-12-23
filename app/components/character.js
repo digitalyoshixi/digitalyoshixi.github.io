@@ -1,12 +1,9 @@
 'use client'
 import React, { Suspense } from 'react';
-import { Canvas } from '@react-three/fiber';
-import { useGLTF, OrbitControls } from '@react-three/drei';
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei';
+import CharacterModel from './characterlogic';
 
-function Model({ path }) {
-  const { scene } = useGLTF(path);
-  return <primitive object={scene} rotation={[0,4.7,0]} scale={[2, 2, 2]} />;
-}
 
 export default function Character() {
   return (
@@ -15,7 +12,7 @@ export default function Character() {
       <directionalLight position={[10, -10, -10]} intensity={3} />
       <directionalLight position={[-10, 0, 0]} intensity={3} />
       <Suspense fallback={null}>
-        <Model path="/creature.glb" />
+        <CharacterModel></CharacterModel>
       </Suspense>
       <OrbitControls />
     </Canvas>
