@@ -1,5 +1,5 @@
 import PageLayout from "../components/pagelayout"
-import MyMDXContent from './page.mdx';
+import MyMDXContent from './pagecontent.mdx';
 
 export default function Page() {
   return (
