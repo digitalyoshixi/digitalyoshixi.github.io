@@ -5,8 +5,6 @@ This is my blog made in:
 - Blender
 
 # To-do list
-- Fix Markdown Rendering Issues (Cant show newline, lists, etc)
-- Allow blogposts to be rendered from mdx files
+- Create pages lib file and dynamic route with slugs and frontmatter
 - Create paginator
-- Create RSS Feed Button, and RSS feed file and test it with an rss feed hook
-- 
+- Test RSS feed with validator.w3.org/feed

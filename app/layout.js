@@ -14,7 +14,8 @@ const sourgummy = localFont({
 
 export const metadata = {
   title: "Yoshixis Web",
-  description: "Here is my internet lair",
+  description: "Hi, im David. This is my interweb page filled with games and blog posts and awesome gifs.",
+  url : "https://digitalyoshixi.github.io/"
 };
 
 export default function RootLayout({ children }) {
