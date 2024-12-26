@@ -21,7 +21,8 @@ export async function GET() {
             guid : `${metadata.url}/blog/${post.frontmatter.uri}`,
             url : `${metadata.url}/blog/${post.frontmatter.uri}`,
             date : post.frontmatter.publishDate,
-            description : post.frontmatter.description
+            description : post.frontmatter.description,
+            author : "yoshixi"
         })
     })
 
