@@ -1,5 +1,5 @@
 import RSS from "rss";
-
+import getBlogs from '../feeder';
 import { metadata } from "../../layout";
 
 
@@ -13,7 +13,7 @@ export async function GET() {
         pubDate: new Date(),
     });
 
-//    const allPosts = await getAllPosts()
+//    const allPosts = await getBlogs
 //
 //    allPosts.forEach(post => {
 //        feed.item({
