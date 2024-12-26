@@ -14,7 +14,9 @@
     "@next/mdx": "^15.1.2",
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
+    "@tailwindcss/typography": "github:tailwindcss/typography",
     "@types/mdx": "^2.0.13",
+    "autoprefixer": "^10.4.20",
     "next": "^14.2.5",
     "next-mdx-remote": "^5.0.0",
     "react": "^18.3.1",
@@ -23,7 +25,7 @@
     "remark-html": "^16.0.1"
   },
   "devDependencies": {
-    "postcss": "^8.4.40",
-    "tailwindcss": "^3.4.7"
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
   }
 }
