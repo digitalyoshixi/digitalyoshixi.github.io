@@ -5,6 +5,4 @@ This is my blog made in:
 - Blender
 
 # To-do list
-- Create pages lib file and dynamic route with slugs and frontmatter
-- Create paginator
-- Test RSS feed with validator.w3.org/feed
+- Add a festive theme

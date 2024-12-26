@@ -1,5 +1,5 @@
 import RSS from "rss";
-import getBlogs from '../feeder';
+import { getBlogs } from '../feeder.js';
 import { metadata } from "../../layout";
 
 
@@ -13,16 +13,17 @@ export async function GET() {
         pubDate: new Date(),
     });
 
-//    const allPosts = await getBlogs
-//
-//    allPosts.forEach(post => {
-//        feed.item({
-//            title : post.title,
-//            guid : `${metadata.url}/blog/${post.uri}`,
-//            url : `${metadata.url}/blog/${post.uri}`,
-//            date : post.date
-//        })
-//    })
+    const allPosts = await getBlogs()
+
+    allPosts.forEach(post => {
+        feed.item({
+            title : post.frontmatter.title,
+            guid : `${metadata.url}/blog/${post.frontmatter.uri}`,
+            url : `${metadata.url}/blog/${post.frontmatter.uri}`,
+            date : post.frontmatter.publishDate,
+            description : post.frontmatter.description
+        })
+    })
 
     return new Response(feed.xml(), {
         headers: {
