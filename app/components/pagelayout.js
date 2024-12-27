@@ -43,7 +43,7 @@ export default function PageLayout( { title, children } ){
                         </div>
                         <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
                             <h1 className="text-center font-sourgummy text-5xl">{title}</h1>
-                            <div className="prose prose-h1:text-4xl prose-h1:text-green-500 prose-h2:text-3xl prose-strong:text-red-500 prose-strong:font-bold prose-em:text-blue-500  prose-a:text-blue-400 prose-a:underline p-5 text-2xl max-w-none w-[100%] font-acme">{children}</div>
+                            <div className="m-0 prose prose-h1:text-4xl prose-h1:text-green-500 prose-h2:text-3xl prose-strong:text-red-500 prose-strong:font-bold prose-em:text-blue-500  prose-a:text-blue-400 prose-a:underline p-5 text-2xl max-w-none w-[100%] font-acme">{children}</div>
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
@@ -56,8 +56,32 @@ export default function PageLayout( { title, children } ){
                         <div className="flex-none font-sourgummy bg-white rounded-lg w-full h-[40%] my-[6%]">
                             Games
                         </div> 
-                        <div className="flex-grow font-sourgummy bg-white rounded-lg w-full mb-[6%]">
-                            88x31
+                        <div className="flex-grow font-sourgummy text-white bg-black border-2 rounded-lg w-full mb-[6%]">
+                            
+                            <div className="text-center">
+                                88x31
+                            </div>
+                            <div className="grid grid-cols-2 justify-items-center">
+
+                            <a href="" >
+                                <img className="p-1" src="/88x31/yoshixiweb.png"></img>
+                            </a>
+                            <a href="https://binary.ninja/" >
+                                <img className="p-1" src="/88x31/binaryninja.png"></img>
+                            </a>
+                            <a href="https://www.blender.org/" >
+                                <img className="p-1" src="/88x31/blender.gif"></img>
+                            </a>
+                            <a href="https://knowyourmeme.com/memes/you-should-kill-yourself-now" >
+                                <img className="p-1" src="/88x31/lowtiergod.gif"></img>
+                            </a>
+                            <a href="https://nixos.org/" >
+                                <img className="p-1" src="/88x31/nixos.png"></img>
+                            </a>
+                            <a href="https://notnite.com/" >
+                                <img className="p-1" src="/88x31/notnite.png"></img>
+                            </a>
+                            </div>
                         </div> 
                     </div>
                 </div>
