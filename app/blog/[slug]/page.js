@@ -1,5 +1,5 @@
 import { getBlogBySlug, getAllBlogSlug } from "../feeder.js"
-import PageLayout from "@/app/components/pagelayout.js"
+import MDXLayout from "@/app/components/mdxlayout"
 import Page from "../page.js"
 export async function generateStaticParams() {
   return getAllBlogSlug()
@@ -8,7 +8,7 @@ export async function generateStaticParams() {
 export default async function BlogPage({params}) {
   const blog = await getBlogBySlug(params.slug)
   return (
-    <PageLayout title={blog.frontmatter.title}>
+    <MDXLayout title={blog.frontmatter.title}>
         <div className="text-center outline-dotted font-extrabold">
         {blog.frontmatter.publishDate}
         <br/>
@@ -16,6 +16,6 @@ export default async function BlogPage({params}) {
         </div>
         <br/>
         {blog.content}
-    </PageLayout>
+    </MDXLayout>
   )
 }

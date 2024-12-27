@@ -19,7 +19,15 @@ export default {
       },
       backgroundImage : {
         'aiforest' : "url('/images/aiforest.jpeg')",
-      }
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            'padding': '0',
+            'margin': '0',
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

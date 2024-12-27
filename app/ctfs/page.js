@@ -1,10 +1,10 @@
-import PageLayout from "../components/pagelayout"
+import MDXLayout from '../components/mdxlayout';
 import MyMDXContent from './pagecontent.mdx';
 
 export default function Page() {
   return (
-    <PageLayout title="CTFs">
+    <MDXLayout title="CTFs">
         <MyMDXContent/>
-    </PageLayout>
+    </MDXLayout>
   )
 }

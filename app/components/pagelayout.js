@@ -43,18 +43,22 @@ export default function PageLayout( { title, children } ){
                         </div>
                         <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
                             <h1 className="text-center font-sourgummy text-5xl">{title}</h1>
-                            <div className="m-0 prose prose-h1:text-4xl prose-h1:text-green-500 prose-h2:text-3xl prose-strong:text-red-500 prose-strong:font-bold prose-em:text-blue-500  prose-a:text-blue-400 prose-a:underline p-5 text-2xl max-w-none w-[100%] font-acme">{children}</div>
+                            <div className="m-0 p-5 text-2xl max-w-none w-[100%] font-acme">{children}</div>
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
-                        <div className="flex-none text-center font-sourgummy bg-white rounded-lg my-[7%] h-[5%] w-[50%] mx-auto">
+                        <div className="flex-none text-center font-sourgummy text-white bg-purple-900 border-2 rounded-lg my-[7%] h-[5%] w-[60%] mx-auto">
                             Obsidian Notes
                         </div> 
-                        <div className="flex-none font-sourgummy bg-white rounded-lg w-full h-[15%]">
-                            Themes
+                        <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[15%]">
+                            <div className="text-center">
+                                Themes
+                            </div>
                         </div> 
-                        <div className="flex-none font-sourgummy bg-white rounded-lg w-full h-[40%] my-[6%]">
-                            Games
+                        <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[40%] my-[6%]">
+                            <div className="text-center">
+                                Games
+                            </div>
                         </div> 
                         <div className="flex-grow font-sourgummy text-white bg-black border-2 rounded-lg w-full mb-[6%]">
                             
@@ -63,7 +67,7 @@ export default function PageLayout( { title, children } ){
                             </div>
                             <div className="grid grid-cols-2 justify-items-center">
 
-                            <a href="" >
+                            <a href="https://digitalyoshixi.github.io" >
                                 <img className="p-1" src="/88x31/yoshixiweb.png"></img>
                             </a>
                             <a href="https://binary.ninja/" >
