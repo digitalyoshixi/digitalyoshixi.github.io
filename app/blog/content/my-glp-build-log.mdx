@@ -53,3 +53,97 @@ Beyond the PCB, I also have with me:
 - 4 x Arduino Headers
 - 2 x TRRS Jacks from [Keebio](https://keeb.io/products/trrs-jack-3-5mm)
 - 60% lead solder because I love lead
+- 42 x 1n4148 through hole [Diodes](https://keeb.io/products/1n4148-diodes)
+- Also a fan blowing to a window (not shown in the picture)
+
+# Assembling
+
+The process to build is very tedious, lots of soldering the same components
+
+## Soldering Diodes
+
+You first want to solder all the diodes on the PCB.
+Ensure, the black part of the diode lines up with the vertical bar on the diode pad.
+![dd](/blog/my-glp-build-log/diodeorientation.png)
+
+Be warned that it is very easy to remove the metal pads below the diode if you attempt to resolder the diodes. If these are gone, then there is no point of contact between the and the PCB, so ensure you get it right the first time! 
+
+![brokenpads](/blog/my-glp-build-log/brokenpads.png)
+
+Ok, so one side of the PCB with all the diodes soldered.
+
+![solderedpcb](/blog/my-glp-build-log/solderedpcb.png)
+
+## Soldering Microcontrollers
+
+I soldered my microcontrollers. This was a bad idea, but it is what I did. 
+![solderedcontroller](/blog/my-glp-build-log/solderedcontroller.png)
+The better way is to socket them, by putting them into hot-swappable micro controller sockets. This way, you can easily remove the microcontroler when need be.
+
+## Soldering TRRS Jacks
+The TRRS jacks go below the micro controller and they are very easy to solder on. There is only one orientation so you can never get it wrong.
+![ttrs](/blog/my-glp-build-log/trrsjack.png)
+
+
+## Flashing Firmware
+
+Pro micros support QMK keyboard firmware. This firmware allows emulation of key presses.
+1. Install QMK, 
+```
+sudo pacman -S qmk
+```
+2.
+```
+qmk setup
+```
+3. Install my compiled keyboard layout file from: [UploadThing](https://utfs.io/f/UAdp7ivWKXouu5OLI8U6bXOxGnrEIka2BsyjvdL8u7ow5lRq)
+4. 
+```
+qmk flash davidlayout.hex
+```
+5. Connect your microcontroller to your computer using your USB 2.0 cable, and then reset the microcontroller by shorting RST and GND pins
+![shorting](/blog/my-glp-build-log/shortingguide.png)
+
+If you did it right, some LED in your microcontroller should light up, and the flashing progress should appear on your terminal.
+
+This allows the firmware for your keyboard to be installed on your microcontroller. You can now, emulate key presses.
+
+## Emulating Key Presses
+
+The reason why we want to emulate early on is to check if each key works on our PCB. It would suck if we assembled our entire keyboard just for a few keys to be inactive at the end. Which is what happened to me...
+
+Once you have your keyboard plugged into your computer, and the LEDS on the microcontrollers light up, you can take some tweezers and short the two terminals that correspond to each key.
+![keytest](/blog/my-glp-build-log/keytest.png)
+Test, out that each key works with the [QMK configurator](https://config.qmk.fm/#/test)
+![qmkconfig](/blog/my-glp-build-log/qmkconfig.png)
+
+
+## Soldering Switches
+Ok, switches are straightforwards.
+
+Put the switch into its socket and the solder the bottom side, ensuring that they touch the pads
+![solderswitches](/blog/my-glp-build-log/solderswitches.png)
+
+This is how the board looks with all the switches soldered.
+
+![fullsolder](/blog/my-glp-build-log/fullsolder.png)
+
+## 3d Printed Case
+
+I have with me a 3d printed case. That I got from [Github](https://github.com/Runningtarrens/Mcorne/blob/main/files/corne%20split_bot_rechts_v4.stl)
+![case](/blog/my-glp-build-log/case.png)
+
+## Keycaps
+Now place the keycaps on the board and you are done.
+![Finished](/blog/my-glp-build-log/finished.png)
+
+## Typing Test
+Now, the layout is querty, but the split makes typing so much more difficult
+<video width="320" height="240" controls>
+  <source src="/blog/my-glp-build-log/typingvideo.mp4" type="video/mp4"/>
+</video>
+
+# Big fuckups
+I messed up alot when building, here is a list of all my fuckups:
+- Dropping my first soldering iron, IT IS BENT
+![BentIron](/blog/my-glp-build-log/bentiron.png)
