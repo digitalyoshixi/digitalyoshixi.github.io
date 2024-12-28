@@ -5,4 +5,6 @@ This is my blog made in:
 - Blender
 
 # To-do list
+- Add image support for blog post cards
+- Make blog post paginator order from reverse-chronological order
 - Add a festive theme
