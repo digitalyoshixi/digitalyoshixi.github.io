@@ -1,0 +1,55 @@
+---
+title : "My Gateron Low Profile Keyboard Build Log"
+author : "Yoshixi"
+uri : "my-glp-build-log"
+publishDate : "12/28/2024"
+summary : "Here I spend ridicuous time and energy to build an ergo mechanical keyboard"
+---
+
+These past few months, I have spent 200 dollars breaking expensive equipment and inhaling toxic fumes all to make an ergonomic split keyboard with as little cost as possible.
+
+Turns out, there were a lot of things I did wrong, and to be honest I should have followed a full guide. But, perhaps my mistakes can be of use to anybody else looking to start this hobby.
+
+Il go through my entire process of setting up my keyboard, along with all the mistakes I made along the way.
+
+# 1. Determine The PCB
+
+I went into this without a clear guide of what I wanted to make. I had this one thought - that it had to be cheap. 
+
+Unfortunately, This lead me to first picking the ferris sweep - shown below:
+![Ferris PCB](/blog/my-glp-build-log/ferris.png)
+
+For background, this is a reversible PCB (This means that the left-side and right-side of the keyboard can use the same PCB) that supports [Kailh Choc V1 Switches](https://chosfox.com/products/kailh-chocs), something that has a completely different build form than [MX Switches](https://www.reddit.com/r/MechanicalKeyboards/comments/k076mv/what_is_considered_a_mx_switch/)
+
+Without knowing this, I proceeded to buy [Gateron Milky Yellows](https://milktooth.com/products/switches/milky-yellow-pro), which are of the MX build form. This mean I couldn't build anything lol.
+
+I attempted to rectify this by printing another PCB, this time it was the [Beekeeb Gateron Low Profile Corne](https://github.com/beekeeb/crkbd-glp), which is of course, another switch type, it requires [Gateron Low Profile Switches](https://gateron.com/collections/low-profile-series)
+
+Milky yellows are in fact not low profile, so I ended up wasting my money on that...
+
+Total cost is ~$70 CAD right now. Really bad haha, but none of my parts were compatible and I still wanted to build something, so I decided to stick with the gateron low profile corne, and build on that PCB.
+
+## Printing PCBs
+PCB printing are very straightforwards.
+
+1. Download https://github.com/beekeeb/crkbd-glp/blob/main/pcb/corne-glp.kicad_pcb
+2. Open PCB in [Kicad](https://www.kicad.org/) and drill to gerber file
+3. Go on [JLCPCB](https://jlcpcb.com/) and purchase 4-layer consumer PCBs to print.
+
+# Rest of Equipment
+![Other Equipment](/blog/my-glp-build-log/otherequipment.jpg)
+Beyond the PCB, I also have with me:
+- USB 2.0, Micro-USB to USB-A **YOU NEED A USB 2.0 OR ABOVE FOR DATA-TRANSFER**
+
+    USB 2.0 has a black inner-header. Anything that is USB 1, has a white inner-header.
+    ![USB Colors](/blog/my-glp-build-log/usbcolors.png)
+- Cheap ass soldering iron - general purpose
+- Brass sponge
+- Eyebrow tweezers (could not get proper tweezers)
+- TRRS cable 
+- Keycaps from [Amazon](https://www.amazon.ca/dp/B0DCBWMJF5?ref=ppx_yo2ov_dt_b_fed_asin_title&th=1)
+- Cutting pliers
+- 2 x Arduino Pro Micros ATmega32U4 from [Keebio](https://keeb.io/products/pro-micro-usb-c-version-5v-16mhz-arduino-compatible-atmega32u4)
+- 4 x Arduino Headers
+- 2 x TRRS Jacks from [Keebio](https://keeb.io/products/trrs-jack-3-5mm)
+- 60% lead solder because I love lead

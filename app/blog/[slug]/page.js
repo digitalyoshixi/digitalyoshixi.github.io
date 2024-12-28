@@ -8,13 +8,7 @@ export async function generateStaticParams() {
 export default async function BlogPage({params}) {
   const blog = await getBlogBySlug(params.slug)
   return (
-    <MDXLayout title={blog.frontmatter.title}>
-        <div className="text-center outline-dotted font-extrabold">
-        {blog.frontmatter.publishDate}
-        <br/>
-        {blog.frontmatter.author}
-        </div>
-        <br/>
+    <MDXLayout title={blog.frontmatter.title} author={blog.frontmatter.author} publishDate={blog.frontmatter.publishDate}>
         {blog.content}
     </MDXLayout>
   )
