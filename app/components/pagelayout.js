@@ -85,6 +85,9 @@ export default function PageLayout( { title, children } ){
                             <a href="https://notnite.com/" >
                                 <img className="p-1" src="/88x31/notnite.png"></img>
                             </a>
+                            <a href="https://uoftwebloggingclub.neocities.org/" >
+                                <img className="p-1" src="/88x31/webloggingclub.gif"></img>
+                            </a>
                             </div>
                         </div> 
                     </div>
