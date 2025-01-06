@@ -1,10 +1,10 @@
-import MDXLayout from '../components/mdxlayout';
+import PageLayout from '../components/pagelayout';
 import MyMDXContent from './pagecontent.mdx';
 
 export default function Page() {
   return (
-    <MDXLayout title="CTFs">
+    <PageLayout className="prose dark:prose-invert" title="CTFs">
         <MyMDXContent/>
-    </MDXLayout>
+    </PageLayout>
   )
 }

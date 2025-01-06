@@ -20,14 +20,24 @@ export default {
       backgroundImage : {
         'aiforest' : "url('/images/aiforest.jpeg')",
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
-            'padding': '0',
-            'margin': '0',
+            'h1, h2, h3, h4': {
+              marginTop: '0em',
+              marginBottom: '0.0em',
+            },
+            p: {
+              marginTop: '0.0em',
+              marginBottom: '0.0em',
+            },
+            h1 : {
+              fontSize: '3rem',
+              color: theme('colors.green.500'),
+            }
           },
         },
-      },
+      }),
     },
   },
   plugins: [require("@tailwindcss/typography")],
