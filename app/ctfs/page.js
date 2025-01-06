@@ -1,10 +1,25 @@
 import PageLayout from '../components/pagelayout';
-import MyMDXContent from './pagecontent.mdx';
-
+import Link from 'next/link'
 export default function Page() {
   return (
-    <PageLayout className="prose dark:prose-invert" title="CTFs">
-        <MyMDXContent/>
+    <PageLayout title="CTFs">
+      <h1>Hello, this my collection of CTFs played:</h1> 
+        <div className="m-10 rounded-md bg-black w-[50%] text-white flex flex-col items-center mx-auto">
+          <li className='m-5 text-blue-500 m-5'>
+            <Link className="text-blue-500" href="./ctfs/">UOFTCTF - 2025 (Coming up)</Link>
+          </li>
+
+          <li className='m-5 text-purple-500'>
+            <Link className="text-purple-500" href="./ctfs/irisctf2025">IRISCTF - 2025</Link>
+          </li>
+        </div>
+      <p>
+        You can see our <Link className="text-red-500" href="https://ctftime.org/team/280084">CTFTIME</Link>
+      </p>
+
+      <p>
+        You can join our <Link className="text-blue-500" href="https://discord.gg/3z6GJQdq">Discord</Link>
+      </p>
     </PageLayout>
   )
 }

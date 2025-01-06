@@ -34,7 +34,16 @@ export default {
             h1 : {
               fontSize: '3rem',
               color: theme('colors.green.500'),
-            }
+            },
+            strong : {
+              color: theme('colors.red.500'),
+            },
+            em : {
+              color: theme('colors.blue.500'),
+            },
+            a : {
+              color: theme('colors.blue.700'),
+            },
           },
         },
       }),
