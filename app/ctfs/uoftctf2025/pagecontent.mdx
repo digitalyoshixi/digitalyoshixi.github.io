@@ -2,7 +2,6 @@ import Link from 'next/link'
 
 # Challenges
 - <Link href="#highly-optimized">Highly Optimized(rev)</Link>
-- <Link href="#poof">Poof(forens)</Link>
 
 
 <h2 id="highly-optimized">Highly Optimized</h2>
@@ -41,6 +40,116 @@ Lets dump that segment of memory. You can do this by:
 Do you see the numbers 0,2,3,5? these correspond to the cases in the switch statement. If you keep reading the dump you willa also find 0x06 saved in a memory region.
 
 Now, we know that rax points to these switch codes that are stored in the memory region, we need to understand what each swich code does. We can read the disassembly, but I think it would be easier to read a decompiled form instead.
+```
+//----- (00000000000010B0) ----------------------------------------------------
+__int64 __fastcall main(int a1, char **a2, char **a3)
+{
+  int v3; // ebx
+  int v4; // edx
+  int v5; // r13d
+  __int64 v6; // rdx
+  __int64 v7; // rax
+  __int64 v8; // rax
+  __int64 v10[137]; // [rsp+0h] [rbp-448h] BYREF
 
+  v3 = 0;
+  v10[131] = __readfsqword(0x28u);
+  puts("I will tell you the flag, if you don't mind waiting a few moments...");
+  memset(v10, 0, 0x410uLL);
+  v4 = 0;
+  while ( 1 )
+  {
+    v5 = v4 + 1;
+    switch ( qword_4020[v4] )
+    {
+      case 0LL:
+        v8 = v3;
+        v4 += 2;
+        ++v3;
+        v10[v8 + 1] = qword_4020[v5];
+        break;
+      case 1LL:
+        v6 = v10[v3];
+        v7 = v3++;
+        v10[v7 + 1] = v6;
+        v4 = v5;
+        break;
+      case 2LL:
+        v10[v3 - 1] -= v10[v3];
+        --v3;
+        ++v4;
+        break;
+      case 3LL:
+        v10[v3 - 1] = v10[v3] < (unsigned __int64)v10[v3 - 1];
+        --v3;
+        ++v4;
+        break;
+      case 4LL:
+        --v3;
+        v4 += 2;
+        if ( v10[v3 + 1] )
+          v4 -= LODWORD(qword_4020[v5]);
+        break;
+      case 5LL:
+        putchar(SLOBYTE(v10[v3--]));
+        v4 = v5;
+        break;
+      case 6LL:
+        return 0LL;
+      default:
+        ++v4;
+        break;
+    }
+  }
+}
+```
+To summarize:
+- there is a counter variable v4 that indexes qword_4020
+- qword_4020 is the memory range pointed to by **rbp**
+- there is a temporary stack v10
+- it performs a switch statement on the value at qword_4020[v4]
+- switch code 0 pushes the value located at the next address (qword_4020[v4+1]) onto the top of the temporary stack v10 and increments v4 by 2
+- switch code 1 duplicates the value on the temporary stack v10 and increments v4
+- switch code 2 subtracts the two topmost alues on stack v10. (v10[top-1] -= v10[top]) and increments v4
+- switch code 3 compares to see if the v10[top] < v10[top-1] and increments v4 and adds 0 to top of stack if its true
+- switch code 4 checks if top of stack is 0 and then changes v4 = v4 - qword_4020[v4+1] 
+- switch code 5 prints the topmost value of the stack
+- switch code 6 exits the program
 
-<h2 id="poof">Poof</h2>
+If we want to visualize this we can:
+![tracing](/ctfs/uoftctf2025/tracing.png)
+
+In other words, what the program is doing is perpetually subtracting the second pushed value from the first pushed value until its smaller than the second pushed value.
+![perpetualtrace](/ctfs/uoftctf2025/perpetual.png)
+After its smaller than the second pushed value, we print that character to the screen.
+
+We can write a script to tell us the characters we get from doing this:
+```
+print(chr(0x00cffb289af4b1d1 % 0x83), end="")
+print(chr(0x00955f7e7a2abc09 % 0x82), end="")
+print(chr(0x0171d0eef6e34564 % 0x92), end="")
+print(chr(0x01c8c0106f982d2c % 0x78), end="")
+print(chr(0x01a3df010db43d50 % 0x79), end="")
+print(chr(0x0070d52b655429d4 % 0xa0), end="")
+print(chr(0x0086ba083db4a00e % 0x8f), end="")
+print(chr(0x01ee6d244821e17e % 0x93), end="")
+print(chr(0x021f3e25788406b2 % 0x8a), end="")
+print(chr(0x013c0021e70d77b4 % 0xa3), end="")
+print(chr(0x027edd2385f658c6 % 0xaa), end="")
+print(chr(0x00a07da21ef9e1b4 % 0x34), end="")
+print(chr(0x00d00e8519e9cc06 % 0x41), end="")
+print(chr(0x00d6dfc3f1e11375 % 0x78), end="")
+print(chr(0x00efaa53300da663 % 0x8d), end="")
+print(chr(0x007568123db27db8 % 0x89), end="")
+print(chr(0x00f174602422164a % 0x87), end="")
+print(chr(0x009b991d46e343ee % 0x75), end="")
+print(chr(0x0016c43fb0f9b780 % 0x44), end="")
+print(chr(0x010c7b1796d09c04 % 0x44), end="")
+print(chr(0x005f5cfcf58c8717 % 0x7a), end="")
+print(chr(0x00d715fda1220ce0 % 0x93), end="")
+```
+[Download flagscript.py](/ctfs/uoftctf2025/flagscript.py)
+
+```
+uoftctf{vmr00m_vmr00m}
+```
