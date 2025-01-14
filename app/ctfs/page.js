@@ -6,7 +6,7 @@ export default function Page() {
       <h1>Hello, this my collection of CTFs played:</h1> 
         <div className="m-10 rounded-md bg-black w-[50%] text-white flex flex-col items-center mx-auto">
           <li className='m-5 text-blue-500 m-5'>
-            <Link className="text-blue-500" href="./ctfs/">UOFTCTF - 2025 (Coming up)</Link>
+            <Link className="text-blue-500" href="./ctfs/uoftctf2025">UOFTCTF - 2025</Link>
           </li>
 
           <li className='m-5 text-purple-500'>
