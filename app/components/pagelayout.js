@@ -47,9 +47,10 @@ export default function PageLayout( { title, children } ){
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
-                        <div className="flex-none text-center font-sourgummy text-white bg-purple-900 border-2 rounded-lg my-[7%] h-[5%] w-[60%] mx-auto">
-                            Obsidian Notes
-                        </div> 
+                        <Link href="https://digitalyoshixi.github.io/zettelkasten/" className="flex-row flex text-center font-sourgummy text-white bg-black border-2 rounded-lg my-[7%] h-[5%] w-[60%] mx-auto">
+                            <img className="p-1" src="/images/obsidian.png"></img>
+                            <p className="text-purple-300 mt-1">Obsidian Notes </p>
+                        </Link> 
                         <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[15%]">
                             <div className="text-center">
                                 Themes
