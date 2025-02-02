@@ -17,6 +17,7 @@ export default function PageLayout( { title, children } ){
                             <ul className="text-2xl ">
                                 <li><Link href="/" className="hover:text-green-400">~</Link></li>
                                 <li><Link href="/about" className="hover:text-green-400">/About</Link></li>
+                                <li><Link href="/tech" className="hover:text-green-400">/Tech</Link></li>
                                 <li><Link href="/projects" className="hover:text-green-400">/Projects</Link></li>
                                 <li><Link href="/blog" className="hover:text-green-400">/Blog</Link></li>
                                 <li><Link href="/ctfs" className="hover:text-green-400">/CTFs</Link></li>
@@ -43,7 +44,7 @@ export default function PageLayout( { title, children } ){
                         </div>
                         <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
                             <h1 className="text-center font-sourgummy text-5xl">{title}</h1>
-                            <div className="text-2xl max-w-none w-full prose m-0 p-5 text-2xl max-w-none w-[100%] font-acme">{children}</div>
+                            <div className="text-2xl max-w-none w-full prose-none m-0 p-5 text-2xl w-[100%] font-acme">{children}</div>
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
@@ -66,8 +67,7 @@ export default function PageLayout( { title, children } ){
                             <div className="text-center">
                                 88x31
                             </div>
-                            <div className="grid grid-cols-2 justify-items-center">
-
+                            <div className="grid grid-cols-2 justify-items-center overflow-y-auto max-h-[20vh]">
                             <a href="https://digitalyoshixi.github.io" >
                                 <img className="p-1" src="/88x31/yoshixiweb.png"></img>
                             </a>
