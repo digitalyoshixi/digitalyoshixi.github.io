@@ -5,6 +5,10 @@ export default function Page() {
     <PageLayout title="CTFs">
       <h1>Hello, this my collection of CTFs played:</h1> 
         <div className="m-10 rounded-md bg-black w-[50%] text-white flex flex-col items-center mx-auto">
+          <li className='m-5 text-gray-500 m-5'>
+            <Link className="text-white" href="./ctfs/issessionsctf2025">ISSESSIONSCTF - 2025</Link>
+          </li>
+
           <li className='m-5 text-blue-500 m-5'>
             <Link className="text-blue-500" href="./ctfs/uoftctf2025">UOFTCTF - 2025</Link>
           </li>

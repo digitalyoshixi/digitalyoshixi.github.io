@@ -1,4 +1,4 @@
-import PageLayout from '../../components/pagelayout';
+import PageLayout from '../../components/proselayout';
 import MyMDXContent from './pagecontent.mdx'
 export default function Page() {
   return (
