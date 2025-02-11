@@ -2,7 +2,7 @@ import PageLayout from '../../components/proselayout';
 import MyMDXContent from './pagecontent.mdx'
 export default function Page() {
   return (
-    <PageLayout className="prose dark:prose-invert" title="UoftCTF 2025">
+    <PageLayout className="prose dark:prose-invert" title="ISSessionsCTF 2025">
       <MyMDXContent></MyMDXContent>
     </PageLayout>
   )
