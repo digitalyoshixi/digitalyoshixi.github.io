@@ -5,5 +5,6 @@ This is my blog made in:
 - Blender
 
 # To-do list
-- Add themes
+- Add Dream Diary
 - Add games
+- Add themes

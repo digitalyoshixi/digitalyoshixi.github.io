@@ -89,6 +89,15 @@ export default function PageLayout( { title, children } ){
                             <a href="https://uoftwebloggingclub.neocities.org/" >
                                 <img className="p-1" src="/88x31/webloggingclub.gif"></img>
                             </a>
+                            <a href="https://sonechka.neocities.org/" >
+                                <img className="p-1" src="/88x31/sonechka.png"></img>
+                            </a>
+                            <a href="https://farazkaleemmalik.cyou/" >
+                                <img className="p-1" src="/88x31/farazkaleemmalik.png"></img>
+                            </a>
+                            <a href="https://izzys.casa/" >
+                                <img className="p-1" src="/88x31/izzy.gif"></img>
+                            </a>
                             </div>
                         </div> 
                     </div>

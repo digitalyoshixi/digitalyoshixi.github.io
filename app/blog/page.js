@@ -1,5 +1,4 @@
 import PageLayout from "../components/pagelayout"
-import MyMDXContent from './pagecontent.mdx';
 import Link from "next/link"
 import { getBlogs } from "./feeder"
 
@@ -7,7 +6,9 @@ export default async function Page() {
   const blogs = await getBlogs()
   return (
     <PageLayout title="Blog">
-        <MyMDXContent/>
+      <h1 className="text-5xl text-green-500">This is my blog!!!</h1>
+
+      <p>If you wish to subscribe, add this <Link className="text-blue-800" href="./blog/feed.xml">RSS</Link></p>
       {blogs.sort((a, b) => new Date(b.frontmatter.publishDate) - new Date(a.frontmatter.publishDate)).map((blog, i) => (
         <article key={i} className="my-5 rounded-sm outline text-center text-3xl">
           <div className="flex-row flex bg-[#a1dda1]">
