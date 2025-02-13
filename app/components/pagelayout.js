@@ -21,7 +21,10 @@ export default function PageLayout( { title, children } ){
                                 <li><Link href="/projects" className="hover:text-green-400">/Projects</Link></li>
                                 <li><Link href="/blog" className="hover:text-green-400">/Blog</Link></li>
                                 <li><Link href="/ctfs" className="hover:text-green-400">/CTFs</Link></li>
+                                <li><Link href="/hackathons" className="hover:text-green-400">/Hackathons</Link></li>
                                 <li><Link href="/3d" className="hover:text-green-400">/3D-Models</Link></li>
+                                <li><Link href="/dreams" className="hover:text-green-400">/Dream Diary</Link></li>
+                                <li><Link href="/about/CV.pdf" className="hover:text-green-400">/Resume</Link></li>
                             </ul>
                         </div> 
                         <div className="flex-grow font-sourgummy w-full mb-[6%]">
@@ -76,9 +79,6 @@ export default function PageLayout( { title, children } ){
                             </a>
                             <a href="https://www.blender.org/" >
                                 <img className="p-1" src="/88x31/blender.gif"></img>
-                            </a>
-                            <a href="https://knowyourmeme.com/memes/you-should-kill-yourself-now" >
-                                <img className="p-1" src="/88x31/lowtiergod.gif"></img>
                             </a>
                             <a href="https://nixos.org/" >
                                 <img className="p-1" src="/88x31/nixos.png"></img>
