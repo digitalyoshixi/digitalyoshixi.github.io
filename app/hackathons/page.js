@@ -16,7 +16,7 @@ export default function Page() {
               </div>
               <div className="m-5 flex flex-col">
                 <Image src="/hackathons/deerhacks2025/geminaut.png" height={100} width={100} alt="Geminaut Logo"></Image>
-                <Link className="text-center text-blue-800" href="">Geminaut</Link>
+                <Link className="text-center text-blue-800" href="https://github.com/krishpdev/Deerhacks-IV">Geminaut</Link>
               </div>
               </div>
               <div className="flex justify-center">
