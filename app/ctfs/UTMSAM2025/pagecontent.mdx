@@ -1,0 +1,97 @@
+import Link from 'next/link'
+
+# Challenges
+- <Link href="#first-challenge">First Challenge</Link>
+- <Link href="#second-challenge">Second Challenge</Link>
+- <Link href="#third-challenge">Third Challenge</Link>
+
+
+
+This is a follow-up post to the deerhacks hackathon devlog.
+Halfway through the competition a CTF challenge was given to all participants. A form was sent and our goal was to submit some flags.
+
+We were about finished with out Golang backend when this started and so we had time to start playing this CTF, not that we wouldnt immediately start anyways.
+
+<h2 id="first-challenge">First Challenge</h2>
+The discord message we were given is as such:
+![initialdiscord](/ctfs/utmsam2025/initialdiscord.png)
+
+- <Link href="https://deerhacks-ctf.vercel.app/">https://deerhacks-ctf.vercel.app/</Link>
+
+- <Link href="https://drive.google.com/drive/folders/1EiNaVc5R40qlpTxhM61YK5mPzhkLR9mb?usp=sharing">https://drive.google.com/drive/folders/1EiNaVc5R40qlpTxhM61YK5mPzhkLR9mb?usp=sharing</Link>
+
+1. We need to input a code into the web application. (Note that the web application is offline at the moment)
+2. The readme is as follows:
+![readme1](/ctfs/utmsam2025/readme1.png)
+3. The python code is searching through a tree until you piece together the flag. with the characters being the values of the nodes.
+
+Our solution was just this:
+
+```
+import base64
+import zlib
+
+# Read the encoded .dat file
+with open("hiddentree.dat", "rb") as f:
+    decoded_content = zlib.decompress(base64.b64decode(f.read())).decode()
+
+# Execute the hidden Python code
+exec(decoded_content)
+
+# Now you can use the HiddenBinaryTree class
+tree = HiddenBinaryTree()
+
+#DO NOT CHANGE ANYTHING BEFORE THIS FUNCTION
+
+def traverse(node):
+    if node is None:
+        return
+
+    print(node._value, end='')  # Print current node's value
+    traverse(node._left)        # Traverse left subtree
+    traverse(node._right)       # Traverse right subtree
+
+
+if __name__ == "__main__":
+    traverse(tree.get_root())
+
+```
+
+![hiddentree](/ctfs/utmsam2025/hiddentree.png)
+
+`THEREISNOESCAPE` is the passcode.
+
+
+<h2 id="second-challenge">Second Challenge</h2>
+After inputting the code, you are redirected to a second google drive:
+<Link href="https://drive.google.com/drive/folders/1SL30hdH_Z-5A1EAf8aHkk2Wf8zZ24dfu">https://drive.google.com/drive/folders/1SL30hdH_Z-5A1EAf8aHkk2Wf8zZ24dfu</Link>
+
+The challenge description was:
+```
+"Look beyond the surface—sometimes the key is in the timestamps, author info, or even hidden comments. Metadata can tell a story the file itself won’t."
+```
+We are also given 4 images.
+
+Immediate thing we did was search the metadata with exiftool.
+![exif1](/ctfs/utmsam2025/exif1.png)
+![exif2](/ctfs/utmsam2025/exif2.png)
+
+
+We went up to the highest floor, and we found the exact same fire extinguisher.
+![ext](/ctfs/utmsam2025/sameext.jpg)
+We spent a while searching this place until we found the room, the room had the code on the whiteboard
+![whiteboard](/ctfs/utmsam2025/whiteboard.jpg)
+
+<h2 id="third-challenge">Third Challenge</h2>
+After entering the room, we get this url:
+
+<Link href="https://docs.google.com/forms/d/e/1FAIpQLScWxF1aIaM5jOqVu99Rp6kUvrfRr4GfI3sIgMwVHL-wRK2zVA/viewform">https://docs.google.com/forms/d/e/1FAIpQLScWxF1aIaM5jOqVu99Rp6kUvrfRr4GfI3sIgMwVHL-wRK2zVA/viewform</Link>
+
+
+The last challenge was to fill out a google form
+After running some test cases, we get the following inputs fail:
+- First one: []
+- Second one: [1,1]
+- Third one: [5,3,1]
+
+And afterwards we wait for human confirmation that those were the right codes.
