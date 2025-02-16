@@ -1,0 +1,90 @@
+import Link from 'next/link'
+
+This is a devlog about Deerhacks 2025, a UTM hackathon centered around *Discovery*
+
+# Making it to UTM
+This hackthon was placed at kind of a horrible time, I mean that is true for most hackathons. You rarely ever get a perfectly scheduled hackathon, a event taking place over several days will be bound to have time conflicts.
+
+But this one was kind of funny, there was a winter storm happening the day before the hackathon and the day that the hackathon ended.
+We had to leave early as to not get snowed in. If that happens, UTM closes the doors and we are kicked out.
+
+My commute is 2 hours to UTM, my team mate Ibrahim took 6 hours and right when he got there, the organizers got the signal to start shutting down the area so bro had to leave immediately. Alot of our time was on the TTC lol.
+
+UTM is pretty awesome though, when it snows especialy. Here are some pictures I took of the campus:
+![outside](/hackathons/deerhacks2025/outside1.jpg)
+![outside](/hackathons/deerhacks2025/outside2.jpg)
+![outside](/hackathons/deerhacks2025/outside3.jpg)
+![outside](/hackathons/deerhacks2025/outside4.jpg)
+
+Also, wow, such a cool event. Wish I could go
+![plato](/hackathons/deerhacks2025/plato.jpg)
+
+
+# Planning
+
+Dude I actually went insane planning, like I actually went a bit mad.
+On the train to UTM, and after I got to UTM while my teammates were sleeping, I had nothing to do, so I planned.
+I wrote most of my ideas on this shared excalidraw canvas:
+
+![excalidrawideas](/hackathons/deerhacks2025/excalidrawideas.png)
+<Link href="https://excalidraw.com/#json=yhU0RCrzvtxabNBKmQhvB,tFVXgSei9t_HV3SvrfvubA">https://excalidraw.com/#json=yhU0RCrzvtxabNBKmQhvB,tFVXgSei9t_HV3SvrfvubA</Link>
+
+I also had a lot more blockchain specific ideas written in a notebook, but we ultimately ended up deciding that blockchain is not the way to go.
+
+The second we started crossing ideas out, the more ideas came to us. At this point we spend atleast 12 hours planning with no progress so I just chose the one that seemed to be my favorite and started making a MVP.
+
+# Development
+I got to gemini client to run in Golang in about an hour, and once it worked consistently, we knew we had some progress on this idea, we stuck with it.
+Development started from the back to the front.
+Backend finished first on establishing the browsing client, and the ability to retrieve gemtext from gem urls.
+There were a few libraries that i tried:
+- https://github.com/makew0rld/go-gemini  - Outdated
+- https://github.com/reiver/go-gmni - Docs were difficult
+- https://pkg.go.dev/git.sr.ht/~adnano/go-gemini - I believe i used this
+
+Anyhow, setting up the actual gemini connection is a simple process. You need to create a TLS certificate, as Gemini is trust on first send, any TLS certificate will be accepted.
+Then, you send a GET request. Gemini only accepts GET requests anyhow. This is how you fetch the gemtext of a gemini:// page.
+
+Gemtext looks like this by the way:
+```
+# Project Gemini
+
+## Gemini in 100 words
+
+Gemini is a new internet technology supporting an electronic library of interconnected text documents.  That's not a new idea, but it's not old fashioned either.  It's timeless, and deserves tools which treat it as a first class concept, not a vestigial corner case.  Gemini isn't about innovation or disruption, it's about providing some respite for those who feel the internet has been disrupted enough already.  We're not out to change the world or destroy other technologies.  We are out to build a lightweight online space where documents are just documents, in the interests of every reader's privacy, attention and bandwidth.
+
+=> docs/faq.gmi	If you'd like to know more, read our FAQ
+=> https://www.youtube.com/watch?v=DoEI6VzybDk	Or, if you'd prefer, here's a video overview
+
+## Official resources
+
+=> news/	Project Gemini news
+=> docs/	Project Gemini documentation
+=> history/	Project Gemini history
+=> software/	Known Gemini software
+
+All content at geminiprotocol.net is CC BY-NC-ND 4.0 licensed unless stated otherwise:
+=> https://creativecommons.org/licenses/by-nc-nd/4.0/	CC Attribution-NonCommercial-NoDerivs 4.0 International
+```
+
+Afterwards, I made a gemini parser, its very simple I bet you could figure out how to do it aswell. We turn that gemini plaintext into a json file.
+This json file represents the DOM of the webpage.
+
+Setup some API endpoints to return the DOM given a url, and we are done with the backend.
+
+Note: Gemini browser also has this feature where you have input boxes and you can send *POST* requests but we didnt implement this. Didn't look into this too much
+### Frontend
+Alright, so, lets talk about frontend.
+This is where the last half was spent on. Il just show you the revision we made and then a final video
+
+![frontend1](/hackathons/deerhacks2025/frontend1.png)
+![frontend2](/hackathons/deerhacks2025/frontend2.png)
+![frontend3](/hackathons/deerhacks2025/frontend3.png)
+
+# Video Demo
+<video width="620" height="440" controls>
+  <source src="/hackathons/deerhacks2025/demo.mp4" type="video/mp4"/>
+</video>
+
+# CTF 
+Hey, also, this hackathon had a mini CTF event, we ended up winning 1st place! View the writeup <Link href="/ctfs/UTMSAM2025">Here</Link>
