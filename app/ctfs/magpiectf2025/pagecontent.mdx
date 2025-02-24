@@ -4,9 +4,9 @@ import Link from 'next/link'
 - <Link href="#binary-betrayl">Binary Betral - Rev</Link>
 - <Link href="#overflow1">overflow1 - Pwn</Link>
 - <Link href="#cops-cookies">Cops like Ciphers and Cookies - Web</Link>
-- <Link href="#binary-betrayl">Helmet - Web</Link>
-- <Link href="#binary-betrayl">Journal - Web</Link>
-- <Link href="#binary-betrayl">The Teeny Disappearance - Cloud</Link>
+- <Link href="#helmet">Helmet - Web</Link>
+- <Link href="#journal">Journal - Web</Link>
+- <Link href="#teeny">The Teeny Disappearance - Cloud</Link>
 
 We got 5th place for this CTF! There were some cool challenges, awesome theming aswell!
 
@@ -158,3 +158,30 @@ magpieCTF{Rich_3nou9h_7o_$+@y_C1e@n}
 8. Then, lets just change guest to admin, and we get:
    ![cookies6](/ctfs/magpiectf2025/cookies6.webp)
 9. ![cookies7](/ctfs/magpiectf2025/cookies7.webp)
+
+<h1 id="helmet">Helmet</h1>
+1. Notice that the buddha is missing a 'head' ![head1](/ctfs/magpiectf2025/helmet1.webp)
+2. send buddha a 'head'
+3. ![head2](/ctfs/magpiectf2025/helmet2.webp)
+
+<h1 id="journal">Journal</h1>
+With CTRL+U
+![journal](/ctfs/magpiectf2025/journal.webp)
+Convert from base64
+`magpieCTF{$p1d3r_W4$_H3r3}`
+
+<h1 id="teeny">The Teeny Disappearance</h1>
+1. Jacky gave me this url to use: `http://169.254.169.254/latest/meta-data/iam/security-credentials/read-only-s3-role`
+2. ![teeny1](/ctfs/magpiectf2025/teeny1.webp)
+3. setup your `~/.aws/config`
+   ![teeny7](/ctfs/magpiectf2025/teeny7.webp)
+4. Run this to see if you are connected successfully
+   ![teeny2](/ctfs/magpiectf2025/teeny2.webp)
+   ![teeny4](/ctfs/magpiectf2025/teeny4.webp)
+5. Do an ls to check what is in here. we ahve a directory
+   ![teeny3](/ctfs/magpiectf2025/teeny3.webp)
+6. Do another ls to check what is in that directory
+   ![teeny5](/ctfs/magpiectf2025/teeny5.webp)
+7. Download this one:
+   ![teeny6](/ctfs/magpiectf2025/teeny6.webp)
+8. The file contents are: `magpieCTF{14m_15_700_345y_70_m355_up}`
