@@ -30,7 +30,7 @@ export default function Page() {
       </p>
 
       <p>
-        You can join our <Link className="text-blue-500" href="https://discord.gg/3z6GJQdq">Discord</Link>
+        You can join our <Link className="text-blue-500" href="https://discord.gg/DwXKnG8FNC">Discord</Link>
       </p>
     </PageLayout>
   )
