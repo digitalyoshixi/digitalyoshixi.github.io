@@ -96,13 +96,16 @@ export default function PageLayout( { title, children } ){
                             <a href="https://izzys.casa/" >
                                 <img className="p-1" src="/88x31/izzy.gif"></img>
                             </a>
+                            <a href="https://nadeko.net/" >
+                                <img className="p-1" src="/88x31/nadekodotnetbanner.png"></img>
+                            </a>
                             </div>
                         </div> 
                     </div>
                 </div>
 
             </div>
+    <Image src="/gifs/wormhole.gif" width={50} height={50} className="absolute bottom-2 left-2"></Image>     
         </>
-        
     )
 }
