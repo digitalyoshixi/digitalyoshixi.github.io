@@ -96,6 +96,9 @@ export default function PageLayout( { title, children } ){
                             <a href="https://izzys.casa/" >
                                 <img className="p-1" src="/88x31/izzy.gif"></img>
                             </a>
+                            <a href="https://sageland.neocities.org/" >
+                                <img className="p-1" src="/88x31/sage.png"></img>
+                            </a>
                             </div>
                         </div> 
                     </div>
