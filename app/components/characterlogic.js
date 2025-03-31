@@ -9,8 +9,7 @@ function Model({ path , rot}) {
 };
 
 export default function CharacterModel() {
-  const [mousePosition,setMousePosition] = useState({x : 0, y : 0})
-
+  const [mousePosition,setMousePosition] = useState([0, 0])
   const [rot, setRot] = useState({x : 0, y : 4.7, z : 0})
   useFrame(() => {
     const updateMousePosition = (ev) => {
