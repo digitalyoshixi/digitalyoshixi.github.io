@@ -80,7 +80,8 @@ jobs:
     runs-on: self-hosted
     needs: build
     steps:
-      - name: Deploy locally
+      - name: Deploy to GitHub Pages
         id: deployment
         run: |
-          npx serve@latest out
+          npx serve@latest out > /dev/null 2>&1 &
+
