@@ -80,6 +80,7 @@ jobs:
     runs-on: self-hosted
     needs: build
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy locally
         id: deployment
-        uses: actions/deploy-pages@v4
+        run: |
+          npx serve@latest out
