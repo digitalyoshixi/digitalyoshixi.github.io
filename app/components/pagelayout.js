@@ -58,14 +58,14 @@ export default function PageLayout( { title, children } ){
                                 Themes
                             </div>
                         </div> 
-                        <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[40%] my-[6%]">
+                        <div className="flex-none overflow-y-auto max-h-[40vh] font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[40%] my-[6%]">
                             <div className="text-center">
                                 Selfhosted Services / Tools / Toys
                             </div>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw Rice</Link>
+                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="ihavehemroids">Invidious</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-orange-500" href="ihavehemroids">Redlib</Link>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="ihavehemroids">Personal CTFd</Link>
+                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="ihavehemroids">My CTFd</Link>
                         </div> 
                         <div className="flex-grow font-sourgummy text-white bg-black border-2 rounded-lg w-full mb-[6%]">
                             
