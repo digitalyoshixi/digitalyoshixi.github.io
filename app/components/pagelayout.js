@@ -22,6 +22,7 @@ export default function PageLayout( { title, children } ){
                                 <li><Link href="/ctfs" className="hover:text-green-400">/CTFs</Link></li>
                                 <li><Link href="/hackathons" className="hover:text-green-400">/Hackathons</Link></li>
                                 <li><Link href="/3d" className="hover:text-green-400">/3D-Models</Link></li>
+                                <li><Link href="/garden" className="hover:text-green-400">/Garden</Link></li>
                                 <li><Link href="/about/CV.pdf" className="hover:text-green-400">/Resume</Link></li>
                             </ul>
                         </div> 
