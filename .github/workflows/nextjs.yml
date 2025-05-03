@@ -25,5 +25,5 @@ jobs:
 
       - name: Start app
         run: |
-          nohup npx serve@latest out &
+          sudo systemctl restart mysite.service
 
