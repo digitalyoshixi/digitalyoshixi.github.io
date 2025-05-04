@@ -1,0 +1,34 @@
+import Link from 'next/link'
+
+# Challenges
+- <Link href="#passwordcracking2">Password Cracking 2 (cracking)</Link>
+- <Link href="#simplefix">Simple Fix (CI/CD)</Link>
+- <Link href="#aitools">AI Tool Abuse (LLM)</Link>
+
+Lots of cloud sec here!
+
+<h2 id="passwordcracking2">Password Cracking 2</h2>
+1. `keepass2john Passwords.kdb >> database.hash`
+
+2. `john --wordlist=/usr/share/wordlists/rockyou.txt -format:keepass database.hash`
+    
+    ![](/ctfs/punkctf2025/passwordcracking2.webp)
+
+3. So, we get the flag as `zebralicious`
+
+<h2 id="simplefix">Simple Fix</h2>
+We are given a Gitea instance, and a Jenkins instance.
+
+The gitea instance is for us to commit code changes, and the jenkins instance will perform a pipeline after each commit.
+
+This specific pipeline will run semgrep on the codebase, then echo the entire codebase for a check file (presumably checking for security issues) before printing the flag.
+
+So, our goal is to patch this app of it security vulnerability.
+
+![](/ctfs/punkctf2025/simplefix.webp)
+If we look at the code, we see the final line that there is a debug=True statement, which should not be in production, so we remove that in the online editor, and the commit again. Then, we run the pipeline and get the flag!
+`punk_{35MZKE9CJF9TZ9OW}`
+
+<h2 id="aitools">AI Tool Abuse</h2>
+These were my prompts:
+![](/ctfs/punkctf2025/aitools.webp)

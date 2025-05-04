@@ -6,6 +6,22 @@ export default function Page() {
       <h1>Hello, this my collection of CTFs played:</h1> 
         <div className="m-10 rounded-md bg-black w-[50%] text-white flex flex-col items-center mx-auto">
           <li className='m-5 text-gray-500 m-5'>
+            <Link className="text-gray-300" href="./ctfs/punkctf2025">PunkCTF - 2025</Link>
+          </li>
+          
+          <li className='m-5 text-gray-500 m-5'>
+            <Link className="text-orange-700" href="./ctfs/tsukuctf2025">TsukuCTF - 2025</Link>
+          </li>
+
+          <li className='m-5 text-gray-500 m-5'>
+            <Link className="text-red-300" href="./ctfs/incognito2025">IncognitoCTF - 2025</Link>
+          </li>
+
+          <li className='m-5 text-gray-500 m-5'>
+            <Link className="text-blue-700" href="./ctfs/ctf@cit2025">CTF@CIT - 2025</Link>
+          </li>
+
+          <li className='m-5 text-gray-500 m-5'>
             <Link className="text-green-700" href="./ctfs/swampctf2025">SwampCTF - 2025</Link>
           </li>
 

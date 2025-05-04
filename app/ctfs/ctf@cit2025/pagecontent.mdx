@@ -1,0 +1,49 @@
+import Link from 'next/link'
+
+# Challenges
+- <Link href="#baller">Baller (Forens)</Link>
+- <Link href="#nerdemoji">Nerd Emoji (Crypto)</Link>
+- <Link href="#serpent">Serpent (Rev)</Link>
+- <Link href="#babykeygen">Baby Keygen (Rev)</Link>
+- <Link href="#malwareanalysis">Malware Analysis (Misc)</Link>
+
+<h2 id="baller">Baller</h2>
+*Solved with Jacky*
+
+We can use `binwalk -e baller.zip` (i have version 3.1.0) to find:
+![](/ctfs/ctf@cit2025/baller1.webp)
+
+We later get a gif file, which we can open up:
+![](/ctfs/ctf@cit2025/baller2.webp)
+
+We wrap it in the flag and get `CIT{im_balling_fr}`
+
+<h2 id="nerdemoji">Nerd Emoji</h2>
+*Solved with Bentley*
+
+This is a substitution cipher.
+We can use this website to find the flag:
+<Link href="https://www.guballa.de/substitution-solver"> https://www.guballa.de/substitution-solver </Link>
+![](/ctfs/ctf@cit2025/nerdemoji.webp)
+
+<h2 id="serpent">Serpent</h2>
+This is a simple deobfuscation challenge.
+
+Once you replace a few variable names, you find that they will all run to form a single flag string, that is not being printed.
+![](/ctfs/ctf@cit2025/serpent.webp)
+
+So, we print out the flag, and we get:
+
+`CIT{7777aKMpU9X3TqnD}`
+
+<h2 id="babykeygen">Baby Keygen</h2>
+1. The input length must be length 16
+2. The first 4 characters must be `KEY_`
+3. After we run the program 16 times, the program will print the flag
+![](/ctfs/ctf@cit2025/babykeygen.webp)
+`CIT{41jN8BKzz388}`
+
+<h2 id="malwareanalysis">Malware Analysis</h2>
+Just toss the file into virustotal and you get a file signature
+
+![](/ctfs/ctf@cit2025/malwareanalysis.webp)
