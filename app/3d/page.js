@@ -25,7 +25,7 @@ export default function Page() {
         <div className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/bombardier.glb`} pos={{x:-1,y:-2.6,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
         <div className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/commandant.glb`} pos={{x:-1,y:-2.6,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
         <div className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/alchemist.glb`} pos={{x:-1,y:-2.6,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
-        udiv className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/cultist.glb`} pos={{x:-1,y:-2.6,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
+        <div className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/cultist.glb`} pos={{x:-1,y:-2.6,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
         <div className="bg-black m-2 flex-none rounded-lg h-40 w-40"><ModelCanvas><GeneralModel path={`/3d/cube.glb`} pos={{x:0,y:0,z:0}} rot={{x:0.2,y:-1.7,z:0}} scale={{x:1,y:1,z:1}}/><OrbitControls makeDefault /></ModelCanvas></div>
       </div>
     </PageLayout>
