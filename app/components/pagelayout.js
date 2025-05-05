@@ -66,7 +66,7 @@ export default function PageLayout( { title, children } ){
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="ihavehemroids">Invidious</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-orange-500" href="ihavehemroids">Redlib</Link>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="ihavehemroids">My CTFd</Link>
+                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="https://ctfd.yoshixi.net/">My CTFd</Link>
                         </div> 
                         <div className="flex-grow font-sourgummy text-white bg-black border-2 rounded-lg w-full mb-[6%]">
                             
