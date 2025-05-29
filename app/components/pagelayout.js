@@ -64,7 +64,7 @@ export default function PageLayout( { title, children } ){
                                 Selfhosted Services / Tools / Toys
                             </div>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw</Link>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="ihavehemroids">Invidious</Link>
+                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="https://invidious.yoshixi.net">Invidious</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-orange-500" href="ihavehemroids">Redlib</Link>
                             <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="https://ctfd.yoshixi.net/">My CTFd</Link>
                         </div> 
