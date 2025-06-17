@@ -73,7 +73,7 @@ export default function PageLayout( { title, children } ){
                                 88x31
                             </div>
                             <div className="grid grid-cols-2 justify-items-center overflow-y-auto max-h-[20vh]">
-                            <a href="https://digitalyoshixi.github.io" >
+                            <a href="https://www.yoshixi.net" >
                                 <img className="p-1" src="/88x31/yoshixiweb.png"></img>
                             </a>
                             <a href="https://binary.ninja/" >
