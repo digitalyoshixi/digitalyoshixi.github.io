@@ -5,6 +5,29 @@ export default function Page() {
   return (
     <PageLayout title="Hackathon Devlogs">
       <h1>Here are all the hackathons that I have documented:</h1> 
+
+        <div className="m-10 rounded-md bg-black text-white flex flex-row items-center mx-auto">
+          <div className="flex flex-col w-[30%]">
+            <h2 className="text-3xl text-center text-orange-200">Spurhacks 2025</h2>
+            <div className="flex flex-row justify-center items-center">
+              <div className="m-5 flex flex-col items-center">
+                <Image src="/hackathons/spurhacks2025/spur.jpg" height={100} width={100} alt="Deerhacks Logo"></Image>
+                <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-orange-500" href="https://devpost.com/software/wormdive">Devpost</Link>
+              </div>
+              <div className="m-5 flex flex-col items-center">
+                <Image src="/hackathons/spurhacks2025/wormdive.png" height={100} width={100} alt="Geminaut Logo"></Image>
+                <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-orange-500" href="https://github.com/byte-babies/wormdive">Wormdive</Link>
+              </div>
+              </div>
+              <div className="flex justify-center">
+                <Link className="bg-gray-800 m-2 w-[60%] text-orange-200 text-center" href="./hackathons/spurhacks2025">Go To Devlog</Link>
+              </div>
+          </div>
+          <div className="bg-gray-800 text-3xl w-[70%] text-center m-5 rounded-md h-40 flex flex-col">
+            A OSINT tool for visualizing a user's online presence on different websites. Has a graph view to allow you to trace and follow a user's history across multiple sites
+          </div>
+        </div>
+
         <div className="m-10 rounded-md bg-black text-white flex flex-row items-center mx-auto">
           <div className="flex flex-col w-[30%]">
             <h2 className="text-3xl text-center text-pink-500">DS3 Datathon 2025</h2>
@@ -26,7 +49,7 @@ export default function Page() {
 
         <div className="m-10 rounded-md bg-black text-white flex flex-row items-center mx-auto">
           <div className="flex flex-col w-[30%]">
-            <h2 className="text-3xl text-center text-blue-200">Deerhacks 4</h2>
+            <h2 className="text-3xl text-center text-blue-200">Deerhacks 2025</h2>
             <div className="flex flex-row justify-center items-center">
               <div className="m-5 flex flex-col items-center">
                 <Image src="/hackathons/deerhacks2025/deerhacks.png" height={100} width={100} alt="Deerhacks Logo"></Image>

@@ -1,0 +1,114 @@
+import Link from 'next/link'
+
+This is a devlog about Spurhacks 2025 - a hackathon hosted by Spur, with an emphasis on AI, Blockchain and Quantum
+
+# Ideating
+Before the hackathon, we started ideating some projects. We didn't know exactly the tracks they would be judging, so we just thought of ideas related to sponsors.
+Here is a list of all that we scrapped:
+- Ragebait AI. looks through your posts and finds things to piss you off. does OSINT on you
+- A Neural Network scrabble solver
+- A LLM truth verifier (like virustotal kind of. grok is this true? gemini is this true?)
+- A LLM prompt injection fuzzer. Uses various existing techniques
+- Deep Neural Rejection implementation
+- Using SecML find inputs that mess up a neural networks output horribly
+- Perplexity that can generate new formats for responses like CSVs or graphs
+- Something DAO related
+- Decentralized app store
+- Blockchain middleman that forwards all transactions to the target. then transactions from one wallet to another cannot be directly seen (could have issues with gas). Monero does something like this alr
+- Malware graph. neo4j graph comparing malware similarities of yara malware samples. part of this could be stored on blockchain
+- Quick sandbox. qemu wrapper to allow you to run software on different processors, and kvm to run on different os easily
+- Location finding model based off google maps street view
+- Tor-like protocol, but every node is a exit node. TCP communication is scattered and split between several exit nodes so no node individually transmits an entire message.
+- downloadmoreram.com, installs ring 0 software to make page files but they are mounted network drives
+- time travel debugger
+
+# Exploring the Building
+We got there with a coach bus, and had 3 hours to kill before opening ceremony.
+
+![kitchen](/hackathons/spurhacks2025/kitchen.png)
+
+We chilled in the dining area for a bit, trying to reverse engineer the QR codes so that we could get free food. Turns out the total combinations were well over 100k, and there were 1k people in total, so this seemed to be pointless.
+
+![elevator](/hackathons/spurhacks2025/elevator.png)
+
+This was the elevator. We camped on the 3rd floor, so We ended up using this quite heavily, when moving to lower floors to get food and attend workshops. It was pretty slow. Sometimes it would stop midway. To be honest, we could have gotten faster if we used the stairs.
+
+Darcy Liu setup a small room for people in his hackathon friendgroup, and put up a note conquering it for DKK use only.
+![dkkroom2](/hackathons/spurhacks2025/dkkroom2.png)
+If you look at the image above, you can see a small card saying 'DKK'.
+
+![dkkroom2](/hackathons/spurhacks2025/dkkroom1.png)
+I ended up coming here quite often for filling water from the sink. It is pretty decent of a place.
+
+Also, we found some standing desks that were quite awesome!
+![dkkroom2](/hackathons/spurhacks2025/standingdesk.png)
+
+This place is actually an old blackberry office, unrenovated, just old equipment lying around.
+The atmosphere became very territorial, where people sealed off their working areas with tables, and stole chairs from other cubicles and rooms.
+Chairs were quite a valuable resource. Many people came into this DKK room to take tables and chairs. One time we went into an elevator, and saw it was stuffed to the brim with office chairs for some grand base-building activity.
+
+![tableguard](/hackathons/spurhacks2025/tableguard.png)
+![baggie](/hackathons/spurhacks2025/baggie.png)
+Someone put their merch bag on the window to prevent eavesdropping? or maybe to shield the outer lights? It was kind of funny so I took a picture.
+# Cerimony and Meal
+
+![dkkroom2](/hackathons/spurhacks2025/opening.png)
+We sat in the opening cerimony hall. Ended up stealing a few seats near the edges to sit down. Many people had to stand. This hackathon was actually quite big. 
+Due to this, and poor food choices, the later dinner lineup took 2 hours per person.
+
+Some volunteers later gave us a whole pizza box, which was nice. Atleast we didnt starve.
+
+# Building process
+Ok, so we spent the first 10-hours planning. We spent WAY too long planning. You can see at the top where all our previous ideas before the hackathon were. We have a lot more during the hackathon.
+
+One idea that sounded really good was to build a OA assistant, which would periodically ask you to explain code changes, and transcribe the answer with STT, and the LLM would respond if youre on the right track.
+Though, I forgot why we didn't roll with this one. I have a feeling we just liked ideating more than building.
+
+I knew how to build with blockchain, and had some quantum ideas, but we didn't really think that was fun. We decided we wanted to build something for ourselves. Something that even if it didn't win prizes, we could use on our own.
+
+We decided to build a OSINT tool aggregator, inspired by Aperisolve, which is a forensics tool results aggregator. We take a small bit of PII, like a username, and run it though several tools to trace the user's online activity.
+
+This was the frontend of the app using ShadCN, it was awesome.
+![frontend](/hackathons/spurhacks2025/frontend.png)
+
+This was our desk during this time. Lol, it is pretty darn messy.
+![ourdesk](/hackathons/spurhacks2025/ourdesk.png)
+
+I have not deployed this app yet, but I plan to continue polishing it.
+
+A big problem we faced was converting all tools into a streamable response, because we wanted the found results to be streamed into the frontend, so it could gradually pop up into the graph view.
+This is a problem with many tools that we had, since they would work to gather all responses, taking 2-3 minutes and then respond with all at once, rather than returing results line-byline. We could revise these tools to change them to be streamable though, we just didn't have the time.
+So, at this moment. It only supports user-search.
+
+# Workshops
+I attended two presentations. The first is from David von Bruwaene, who runs a AI safety startup called asenion. I have some notes on that here:
+<Link href="https://digitalyoshixi.github.io/zettelkasten/Security/Asenion-Security-for-AI">https://digitalyoshixi.github.io/zettelkasten/Security/Asenion-Security-for-AI</Link>
+
+The second one, was a talk about quantum security for bitcoin. It is presented by David Chaum who proposes a new system of cryptocurrency.
+<Link href="https://digitalyoshixi.github.io/zettelkasten/No-Fork-Quantum-Secure-Bitcoin">https://digitalyoshixi.github.io/zettelkasten/No-Fork-Quantum-Secure-Bitcoin</Link>
+To be honest, I couldn't really understand this one, but his papers on this topic are on his website 
+<Link href="https://chaum.com/publications/">https://chaum.com/publications/</Link>
+
+# After Submission
+During judging, we focused on addresing the threat that is the lack of privacy online. We didn't win anything, but we did get to see other cool projects.
+
+This hackathon had a lot of meme tracks. One of my favorite projects is just a crappy AI art generator of schrodinger-cat based tarot cards. Heres a link: 
+<Link href="https://devpost.com/software/tarot-kitty">https://devpost.com/software/tarot-kitty</Link>
+
+
+I also liked this research connecting software, I might use it later on: 
+<Link href="https://devpost.com/software/resdex">https://devpost.com/software/resdex</Link>
+
+
+Anyhow, we played street fighter and played jenga and foosball while waiting for the coach busses to arrive to send us back home.
+
+Here is an image of some coloseum somebody made from jenga blocks.
+![ourdesk](/hackathons/spurhacks2025/coloseum.png)
+
+I talked to a few friends who also came to this hackathon. They were rather disappointed with the tracks, and also did not really feel motivated to build anything. Something about this place is just weird. Many people left early. The coach bus on the way back was only full 70%, which was weird because a lot of people were complaining that there were not enough coach buses.
+Its fine though, we built something that we could use ourselves and there was great networking, and pretty cool workshops.
+
+
+And so I got home and took a picture of the swag we got aswell. Quite a bit of stuff. I love the shirt :)
+
+![ourdesk](/hackathons/spurhacks2025/swag.png)
