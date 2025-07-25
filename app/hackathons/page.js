@@ -5,17 +5,39 @@ export default function Page() {
   return (
     <PageLayout title="Hackathon Devlogs">
       <h1>Here are all the hackathons that I have documented:</h1> 
+        
+        <div className="m-10 rounded-md bg-black text-white flex flex-row items-center mx-auto">
+          <div className="flex flex-col w-[30%]">
+            <h2 className="text-3xl text-center text-teal-200">HackThe6ix 2025</h2>
+            <div className="flex flex-row justify-center items-center">
+              <div className="m-5 flex flex-col items-center">
+                <Image src="/hackathons/hackthe6ix2025/logo.png" height={100} width={100} alt="HackThe6ix Logo"></Image>
+                <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-teal-500" href="https://devpost.com/software/puzzleql">Devpost</Link>
+              </div>
+              <div className="m-5 flex flex-col items-center">
+                <Image src="/hackathons/hackthe6ix2025/puzzleql.png" height={100} width={100} alt="Wormdive Logo"></Image>
+                <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-teal-500" href="https://github.com/squealql/PuzzleQL">PuzzleQL</Link>
+              </div>
+              </div>
+              <div className="flex justify-center">
+                <Link className="bg-gray-800 m-2 w-[60%] text-teal-200 text-center" href="./hackathons/hackthe6ix2025">Go To Devlog</Link>
+              </div>
+          </div>
+          <div className="bg-gray-800 text-3xl w-[70%] text-center m-5 rounded-md h-40 flex flex-col">
+            Heres a fun way to write SQL. We made a block-like coding engine for generating SQL queries and a variety of schema visualization tools for beginners to ease them into how SQL functions.
+          </div>
+        </div>
 
         <div className="m-10 rounded-md bg-black text-white flex flex-row items-center mx-auto">
           <div className="flex flex-col w-[30%]">
             <h2 className="text-3xl text-center text-orange-200">Spurhacks 2025</h2>
             <div className="flex flex-row justify-center items-center">
               <div className="m-5 flex flex-col items-center">
-                <Image src="/hackathons/spurhacks2025/spur.jpg" height={100} width={100} alt="Deerhacks Logo"></Image>
+                <Image src="/hackathons/spurhacks2025/spur.jpg" height={100} width={100} alt="Spurhacks Logo"></Image>
                 <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-orange-500" href="https://devpost.com/software/wormdive">Devpost</Link>
               </div>
               <div className="m-5 flex flex-col items-center">
-                <Image src="/hackathons/spurhacks2025/wormdive.png" height={100} width={100} alt="Geminaut Logo"></Image>
+                <Image src="/hackathons/spurhacks2025/wormdive.png" height={100} width={100} alt="Wormdive Logo"></Image>
                 <Link className="text-3xl m-2 text-center rounded-sm bg-gray-800 text-orange-500" href="https://github.com/byte-babies/wormdive">Wormdive</Link>
               </div>
               </div>

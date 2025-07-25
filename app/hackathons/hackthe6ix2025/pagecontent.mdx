@@ -1,0 +1,80 @@
+import Link from 'next/link'
+
+This is a devlog about Hack The 6ix 2025 - this year hosted at YorkU. 
+
+# Getting there
+I came right after a midterm. Thought i'd make it early as I got pretty lucky with my buses, but I ended up getting lost on York campus for half an hour. 
+
+![blocks](/hackathons/hackthe6ix2025/york.jpg)
+Halfway through my GPS stopped working - probably because grapheneOS limits google services. (I have tried many other navigational softwares, but they all suck! - except Here Wego)
+
+I was at York 10pm-ish, it was late, suprisingly, there are a lot of students just on campus playing and studying outside. Its so weird, but I assume some classes extend all the way to 9pm.
+
+Our team intiailly consisted of 4 people, then it became 3, then four, then 3 again, and finally at 9pm the Saturday before we present on Sunday, we found a 4th member. Lol, it was kind of chaotic, but we ended up doing pretty well as a largely 3-man team.
+
+# Development
+We didn't spend too long on coming up with ideas. Andy thought of developing a SQL builder tool like scratch, inspired from another project: <Link href="https://dorahacks.io/buidl/20342">Blocks</Link> - which was a fun tool for writing smart contracts.
+![blocks](/hackathons/hackthe6ix2025/blocks.png)
+
+We planned for the following features to be implemented:
+- A scratch-like block building engine
+- A live-view of the database, so that projected changes could be displayed in real-time
+- A project creation system for users
+- A schema building tool
+
+I think all of these were implemented other than the live-view of the database, which we simply didnt have time for.
+
+You can take a view of our messy excalidraw canvas here. We have a lot of fun designing these :)
+
+- <Link href="https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ">https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ</Link>
+
+
+### Block-Building Engine
+I built this one :) . Now, there were a few existing tools that existed for block building. We initially thought of using React-Flow - which was what Blocks used. It is strictly for flow-diagrams though, and doesn't capture the same recursively building block creation that we want.
+
+Another option was google's very own Blockly. Which from a glance, looks perfect for our idea! You can define your own language, and your own rules, and the block structures can also be custom declared.
+![blockly](/hackathons/hackthe6ix2025/blockly.png)
+
+Now, I tried for hours trying to create a reactjs wrapper for this tool, and playing with existing Reactjs libraries that import this. 
+
+After the 4th hour I gave up, and thought it'd probably be better to just create this thing from scratch using HTML canvas with a reactjs reference to talk to it.
+
+So, we had to build our own language rules, and canvas logic. The first thing I did on the first night was define the grammar for how we wanted to display SQL. 
+
+SQL is a language with an open langauge reference provided by oracle. We targetted PostgreSQL simply because Supabase hosted PostgreSQL, and we were comfortable working with postgres.
+The two main resources we used were these:
+- <Link href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html">https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html</Link>
+- <Link href="https://www.w3schools.com/sql/sql_quickref.asp">https://www.w3schools.com/sql/sql_quickref.asp</Link>
+
+We weren't going to implement all aspects of SQL, so I only picked a handful of groups we would want to add:
+- Basic CRUD
+- Literal Expressions
+- Conditionals
+- Operators
+- JOINS
+
+![grammar](/hackathons/hackthe6ix2025/grammar.png)
+![blocks](/hackathons/hackthe6ix2025/BlockTypes.png)
+I would have liked to add a few default functions like SUM(), COUNT() and CONCAT. It wouldn't have been very hard to add. 
+
+Yes, it is not hard to add new things at all. We developed a visual block -> language transpiler. We don't do ANY codegen.
+If we can enforce the syntax rules of SQL, then we dont actually need to generate any logic after that, we can directly send it to supabase and check the query response if its valid or not to determine if we match the rules.
+
+Anyhow, heres a screenshot of the final canvas. I am NOT good at UI so it is function-first.
+![blocks](/hackathons/hackthe6ix2025/finalcanvas.png)
+Blocks are color-coded to signal their type, and where they can enter.
+
+### Rest of the App
+
+The rest of the app was not designed by me, only the backend API was created by me, but we never fully tested these APIs so we never got to use them in the final build.
+
+Anyways, we had a schema builder created by George. 
+![schema](/hackathons/hackthe6ix2025/gallery.jpg)
+
+One thing I wanted to say about this is that I thought it was REALLY hard to figure out how to link tables together. Though, apparently in postgreSQL, there is a thing called constraints. Constraints enforce relationships between different tables.
+
+When I learned postgreSQL on freecodecamp 20 hour youtube special, I CRAMMED hard, and now I have seemed to forget much of what was taught. Never watch these tutorials placidly, always try and reflect lol.
+
+# Other cool stuff
+- There was a really sick project that involved drumming midair with accelerometers. Maybe this is just cool to me since ive never touched hardware before, but damn this seemed hard to make: <Link href="https://devpost.com/software/beats-by-air">https://devpost.com/software/beats-by-air</Link>
+- QNX - a sponsor gave our FREE hardware (rasp pi 4 with all relevant peripherals), but you could only keep them if you won. I didnt steal anything but i couldve but I didnt because im moral.
