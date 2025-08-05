@@ -1,4 +1,5 @@
 import Character from './character';
+import Oneko from './onekocomponent';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -6,6 +7,7 @@ export default function PageLayout( { title, children } ){
     return (
         <>
             <div className="bg-cover bg-center h-screen bg-aiforest">
+                <Oneko></Oneko>
                 <div className="h-screen flex flex-row"> 
                     {/* Profile Sidebar */}
                     <div className="flex flex-col w-1/5 mx-[1%]">
