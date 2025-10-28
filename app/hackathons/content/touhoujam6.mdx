@@ -1,0 +1,166 @@
+---
+title : "Touhou Jam 6"
+author : "Yoshixi"
+publishDate : "10/27/2025"
+summary : "We make a game about CIRNO!!! and ice cream!!! and wholesome danmaku"
+hackathonImg : "/hackathons/touhoujam6/touhoujamlogo.jpg"
+projectImg : "/hackathons/touhoujam6/logo.png"
+hackathonUrl : "https://itch.io/jam/touhou-jam-16/rate/3989974"
+projectUrl : "https://github.com/2192375d/Touhou-Game-Jam-16-Cirno-s-Swirlaria"
+textColor : "text-blue-800"
+---
+
+import Link from 'next/link'
+
+This is a devlog about Touhou Jam 6, our very first gamejam!
+
+We built this game as a team of 4:
+- [https://yoshixi.itch.io/](https://yoshixi.itch.io/)
+- [https://2635266513.itch.io/](https://2635266513.itch.io/)
+- [https://heptagonal.itch.io/](https://heptagonal.itch.io/)
+- [https://amai-ichigo.itch.io/](https://amai-ichigo.itch.io/)
+
+You can play and rate the game here:
+
+[https://itch.io/jam/touhou-jam-16/rate/3989974](https://itch.io/jam/touhou-jam-16/rate/3989974)
+
+# Background
+We are all touhou fans. lumiere and heptagonal play the games, me and amai are just fans. 
+I've known about touhou gamejam from playing this dope ass sunflower game: https://noeticnightjar.itch.io/yuuka-souls
+
+# Ideating
+lumiere had the idea to setup the game to be revolved around Cirno collecting ice-cream while avoiding bullets from an angry Reimu.
+heptagonal wanted to incorporate gameplay similar to papa's scooperia.
+
+The gameplay loop was to be established as:
+- Collect ingredients on the floor while running away from an angry
+- Create ice creams to sell to customers
+
+## Initial designs
+This was the inital mockup lumiere drew:
+![initial](/hackathons/touhoujam6/initialidea1.png)
+There is a left safe zone that is a protected area from Reimu. You are able to create ice cream in this zone.
+
+![initial](/hackathons/touhoujam6/initialidea2.png)
+Upon entering the left zone, you are given this ice cream creation screen.
+
+I workshopped an alternate layout for the initial screen that involved setting the workbench at the bottom of the screen, so that the game can be arranged more like a traditional bullet hell.
+
+![initial](/hackathons/touhoujam6/initialidea3.png)
+The main issue with this is that, most of the screen real-estate is not being used. 
+
+So we scrapped this, and used the initial left-right full screen design.
+
+
+## Day 0
+In this day we:
+- Developed a few assets
+- Came up with game name
+- Came up with excalidraw
+
+### Assets
+We drew a first tilemap for later use, we all had midterms to complete, so we decided it would be best to finish a portion of assets beforehand.
+![](/hackathons/touhoujam6/cirno-game.png)
+
+### Excalidraw
+We setup an excalidraw instance to outline the project dependencies and the main gameplay items we want.
+
+[https://excalidraw.com/#json=rmYSAvij8ssxocIhIj-_F,pjIHSvDQVkQc1ZEv0BvPKg](https://excalidraw.com/#json=rmYSAvij8ssxocIhIj-_F,pjIHSvDQVkQc1ZEv0BvPKg)
+
+We decided against the scooping cream in our first image. Instead, we work with soft serve ice cream.
+
+Initially, we thought of the ice-cream creation to be split into two screens.
+![concrete](/hackathons/touhoujam6/concreteidea1.png)
+
+The first screen involved adding the base cream and cone.
+
+The second screen involved adding the specific toppings and doing a 'Cirno Perfect Freeze' at the end before submitting the order.
+
+### Game Name
+We had a few ideas:
+- Unarguable Ice in Red Market
+- Blue Baka Swirlaria
+- Cirno Happening
+- Cirnos Swirlaria
+
+### Extra
+I spent the week trying to learn FLStudio and composing for a touhou style game. Well, I didnt end up doing this since I know jack shit about music, but I learned a lot, especially from [This Video Series](https://invidious.yoshixi.net/watch?v=zJo90I4sNpg)
+
+# Day 1
+- Setup the basic ice-cream table making process
+- Setup main menu page
+- Setup main overworld
+
+### overworld
+This is the overworld portion developed by lumiere:
+
+![](/hackathons/touhoujam6/day11.png)
+
+### Table Menu
+I was in charge of setting up the table section. I setup a method to generate a cone, but the real trouble came in adding the cream.
+
+I thought the most optimized method was to use particles. Godot's particle engine allows for 1M+ particles to be ran on the GPU, but the real issue is that particles cannot collide with eachother.
+
+Well, anyways I used rigid bodies. There is no optimization to be had here. Anything will collisions must be ran on the CPU.
+![](/hackathons/touhoujam6/day12.png)
+
+I also managed to setup a small ordering system.
+![](/hackathons/touhoujam6/day13.png)
+
+# Day 2
+- New assets
+- Ordering competion
+- Work on table
+- Work on overworld
+- Global states and signals 
+
+### New Assets
+heptagonal made new assets, they are pretty nice:
+![](/hackathons/touhoujam6/day21.png)
+![](/hackathons/touhoujam6/day23.png)
+![](/hackathons/touhoujam6/day24.png)
+
+I took this screenshot of it being adapted to the ice-cream menu
+![](/hackathons/touhoujam6/day22.png)
+
+### Global signal handlers and state
+Global handlers were setup to keep track of:
+- Cross-scene signals
+- Game state (hp, points, orders)
+We were able to use these to create a TV scene that kept track of HP and points
+![](/hackathons/touhoujam6/day25.png)
+
+# Day 3
+- New overworld with shooting and item collection
+- New artist joins and helps 
+- Line system
+
+### New Overworld
+Reimu can shoot now, and you can collect items
+![](/hackathons/touhoujam6/day31.png)
+
+We adapted all the bullet patterns we wanted, except for one attack that involved reimu throwing a ying-yang ball. That one takes time...
+
+### New art
+Our 4th member helped to create some nice art for the story of our game
+![](/hackathons/touhoujam6/day32.png)
+
+# Final Day
+- Storyboarding
+- Title page, game over page, end page
+- Submission
+
+### Final Assets
+I tried to make a logo, and failed
+![](/hackathons/touhoujam6/day41.png)
+
+### Storyboarding
+We pieced together the entire story. Im not going to upload it here, play the game, its sweet.
+
+### Submission
+We did some final tweaks and bug fixes, and published **7 minutes** before the jam ended. It was stressful haha.
+This is the picture of the final game we submitted:
+![](/hackathons/touhoujam6/day42.png)
+
+# Cool Stuff
+- There was another cirno game, it is about creating perfect ice blocks ( [https://itch.io/jam/touhou-jam-16/rate/3991138](https://itch.io/jam/touhou-jam-16/rate/3991138))

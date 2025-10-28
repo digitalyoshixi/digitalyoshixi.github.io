@@ -1,4 +1,14 @@
-import Link from 'next/link'
+---
+title : "Hackthe6ix 2025"
+author : "Yoshixi"
+publishDate : "07/27/2025"
+summary : "Heres a fun way to write SQL. We made a block-like coding engine for generating SQL queries and a variety of schema visualization tools for beginners to ease them into how SQL functions."
+hackathonImg : "/hackathons/hackthe6ix2025/logo.png"
+projectImg : "/hackathons/hackthe6ix2025/puzzleql.png"
+hackathonUrl : "https://devpost.com/software/puzzleql"
+projectUrl : "https://github.com/squealql/PuzzleQL"
+textColor : "text-teal-500"
+---
 
 This is a devlog about Hack The 6ix 2025 - this year hosted at YorkU. 
 
@@ -13,7 +23,8 @@ I was at York 10pm-ish, it was late, suprisingly, there are a lot of students ju
 Our team intiailly consisted of 4 people, then it became 3, then four, then 3 again, and finally at 9pm the Saturday before we present on Sunday, we found a 4th member. Lol, it was kind of chaotic, but we ended up doing pretty well as a largely 3-man team.
 
 # Development
-We didn't spend too long on coming up with ideas. Andy thought of developing a SQL builder tool like scratch, inspired from another project: <Link href="https://dorahacks.io/buidl/20342">Blocks</Link> - which was a fun tool for writing smart contracts.
+We didn't spend too long on coming up with ideas. Andy thought of developing a SQL builder tool like scratch, inspired from another project: 
+[https://dorahacks.io/buidl/20342](https://dorahacks.io/buidl/20342)
 ![blocks](/hackathons/hackthe6ix2025/blocks.png)
 
 We planned for the following features to be implemented:
@@ -26,7 +37,7 @@ I think all of these were implemented other than the live-view of the database, 
 
 You can take a view of our messy excalidraw canvas here. We have a lot of fun designing these :)
 
-- <Link href="https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ">https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ</Link>
+- [https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ](https://excalidraw.com/#json=yaBRoT3BRt4WhhB5jEAuq,uZujYqZWqR_iksCjHLP6mQ)
 
 
 ### Block-Building Engine
@@ -43,8 +54,8 @@ So, we had to build our own language rules, and canvas logic. The first thing I 
 
 SQL is a language with an open langauge reference provided by oracle. We targetted PostgreSQL simply because Supabase hosted PostgreSQL, and we were comfortable working with postgres.
 The two main resources we used were these:
-- <Link href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html">https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html</Link>
-- <Link href="https://www.w3schools.com/sql/sql_quickref.asp">https://www.w3schools.com/sql/sql_quickref.asp</Link>
+- [https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlrf/index.html)
+- [https://www.w3schools.com/sql/sql_quickref.asp](https://www.w3schools.com/sql/sql_quickref.asp)
 
 We weren't going to implement all aspects of SQL, so I only picked a handful of groups we would want to add:
 - Basic CRUD
@@ -76,5 +87,5 @@ One thing I wanted to say about this is that I thought it was REALLY hard to fig
 When I learned postgreSQL on freecodecamp 20 hour youtube special, I CRAMMED hard, and now I have seemed to forget much of what was taught. Never watch these tutorials placidly, always try and reflect lol.
 
 # Other cool stuff
-- There was a really sick project that involved drumming midair with accelerometers. Maybe this is just cool to me since ive never touched hardware before, but damn this seemed hard to make: <Link href="https://devpost.com/software/beats-by-air">https://devpost.com/software/beats-by-air</Link>
+- There was a really sick project that involved drumming midair with accelerometers. Maybe this is just cool to me since ive never touched hardware before, but damn this seemed hard to make: [https://devpost.com/software/beats-by-air](https://devpost.com/software/beats-by-air)
 - QNX - a sponsor gave our FREE hardware (rasp pi 4 with all relevant peripherals), but you could only keep them if you won. I didnt steal anything but i couldve but I didnt because im moral.

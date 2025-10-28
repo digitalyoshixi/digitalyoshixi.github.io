@@ -1,4 +1,14 @@
-import Link from 'next/link'
+---
+title : "DS3 Datathon 2025"
+author : "Yoshixi"
+publishDate : "02/22/2025"
+summary : "We made 3 classification models for 3 of the datathon challenges. Ended up with 100%, 93% and 24% accuracy for each challenge as the difficulty progressed. Learned a lot of cool preprocessing techniques and experimented with many different ML models."
+hackathonImg : "/hackathons/ds32025/logo.png"
+hackathonUrl : "https://ds3utsc.com/datathon"
+projectImg : ""
+projectUrl : ""
+textColor : "text-pink-500"
+---
 
 This is a development & learning log about my first data science competition organized by UTSC's DS3 club :)
 
@@ -29,7 +39,7 @@ At this point in time, I started waking up pretty damn late. Like 12pm midday
 4. Created an excalidraw canvas to outline which mushrooms have which key features so that we have a better understanding of which mushrooms have which features
 
 ![excalidraw](/hackathons/ds32025/excalidraw.webp)
-<Link href="https://excalidraw.com/#json=DOyZdcKVawY2DGbX2nlpV,H6whZTYreGNEgTQDCk6q5w">https://excalidraw.com/#json=DOyZdcKVawY2DGbX2nlpV,H6whZTYreGNEgTQDCk6q5w</Link>
+[https://excalidraw.com/#json=DOyZdcKVawY2DGbX2nlpV,H6whZTYreGNEgTQDCk6q5w](https://excalidraw.com/#json=DOyZdcKVawY2DGbX2nlpV,H6whZTYreGNEgTQDCk6q5w)
 
 5. I also used stegonline, to see if it could better make out some details as the images for category 1 and category 3 are very noisy
 ![stegonline](/hackathons/ds32025/stegonline.webp)
@@ -50,7 +60,7 @@ At this point in time, I started waking up pretty damn late. Like 12pm midday
 Fungi preprocesing again
 
 1. I tried a new script, this one will filter out the darkest parts of the image. I also used a generous amount of [[Gaussian Blur]] to denoise.
-2. A read the research paper on this topic linked on the kaggle. <Link href="https://arxiv.org/pdf/2109.07322">https://arxiv.org/pdf/2109.07322</Link>.
+2. A read the research paper on this topic linked on the kaggle. [https://arxiv.org/pdf/2109.07322](https://arxiv.org/pdf/2109.07322)
 	1. The best performing model was:
 		1. ResNet50 with transfer learning
 		2. InceptionV3 without transfer learning
