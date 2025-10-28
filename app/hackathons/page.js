@@ -10,7 +10,7 @@ export default async function Page() {
       <h1>Here are all the hackathons that I have documented:</h1> 
         
         {hackathons.sort((a, b) => new Date(b.frontmatter.publishDate) - new Date(a.frontmatter.publishDate)).map((hackathon, i) => (
-         <div className="bg-black my-5">
+         <div className="bg-black my-5" key={hackathon.slug}>
             <h2 className={`text-3xl text-center ${hackathon.frontmatter.textColor}`}>{hackathon.frontmatter.title}</h2>
         <div className="rounded-md text-white flex flex-row items-center mx-auto">
           <div className="flex flex-col w-[30%]">
