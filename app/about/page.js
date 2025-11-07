@@ -10,7 +10,7 @@ export default function Page() {
       <p>I also love reading sci-fi, doing cardio and being as frugal as humanly possible 💸.</p>
 
       <br/>
-      <p>Im currently in my first year of CS at the <Link className="text-blue-500" href="https://uoftindex.ca/home">University of Toronto</Link>. I am also majoring in stats and minoring in philosophy :)</p>
+      <p>Im currently in my second year of CS, Stats and Philosophy at the <Link className="text-blue-500" href="https://uoftindex.ca/home">University of Toronto</Link>. I am also majoring in stats and minoring in philosophy :)</p>
       <br/>
       <h2 className="text-3xl font-bold"> Tech I use </h2>
       If you want to know some of the tech I use, I have them listed <Link className="text-blue-500" href="/tech"> Here </Link>

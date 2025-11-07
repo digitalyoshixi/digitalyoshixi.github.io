@@ -11,12 +11,12 @@ export default function PageLayout( { title, children } ){
                 <div className="h-screen flex flex-row"> 
                     {/* Profile Sidebar */}
                     <div className="flex flex-col w-1/5 mx-[1%]">
-                        <div className="flex-none rounded-lg my-[6%] h-[20%] w-[50%] mx-auto">
+                        <div className="flex-none rounded-lg my-[6%] h-[20%] w-full md:w-[50%] mx-auto">
                             <Character></Character>
                         </div> 
                         <div className="opacity-80 flex-none text-center text-white font-sourgummy bg-black border-2 border-white rounded-lg w-full h-[65%] mb-[5%]">
-                            <h1 className="text-3xl">Directory</h1>
-                            <ul className="text-2xl ">
+                            <h1 className="text-1xl md:text-2xl lg:text-3xl">Directory</h1>
+                            <ul className="text-1xl md:text-2xl lg:text-3xl">
                                 <li><Link href="/" className="hover:text-green-400">~</Link></li>
                                 <li><Link href="/about" className="hover:text-green-400">/About</Link></li>
                                 <li><Link href="/tech" className="hover:text-green-400">/Tech</Link></li>
@@ -43,7 +43,7 @@ export default function PageLayout( { title, children } ){
                         </div> 
                     </div>
                     <div className="flex flex-col w-3/5">
-                        <div className="opacity-90 rounded-lg font-acme font-light text-4xl text-neutral-900 text-center flex-none h-[6%] w-[50%] mx-auto bg-white my-[2%]">
+                        <div className="opacity-90 rounded-lg font-acme font-light text-1xl md:text-3xl lg:text-4xl text-neutral-900 text-center flex-none h-[6%] w-[50%] mx-auto bg-white my-[2%]">
                             |Yoshixis Web|
                         </div>
                         <div className='border-2 border-black rounded-lg flex-grow p-5 bg-[#E4EFD8] mb-[2%] overflow-y-auto max-h-[100vh]'>
@@ -52,22 +52,22 @@ export default function PageLayout( { title, children } ){
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
-                        <Link href="https://digitalyoshixi.github.io/zettelkasten/" className="flex-row flex text-center font-sourgummy text-white bg-black border-2 rounded-lg my-[7%] h-[5%] w-[60%] mx-auto">
+                        <Link href="https://digitalyoshixi.github.io/zettelkasten/" className="flex-row flex text-center font-sourgummy text-white bg-black border-2 rounded-lg my-[7%] md:h-[5%] h-[10%] w-[60%] mx-auto">
                                 <img className="p-1" src="/images/obsidian.png"></img>
                                 <p className="text-purple-300 ml-2">Zettelkasten</p>
                         </Link> 
-                        <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[15%]">
+                        <div className="flex-none font-sourgummy text-white bg-black border-2 rounded-lg w-full md:h-[15%] h-[10%]">
                             <div className="text-center">
                                 Themes
                             </div>
                         </div> 
-                        <div className="flex-none overflow-y-auto max-h-[40vh] font-sourgummy text-white bg-black border-2 rounded-lg w-full h-[40%] my-[6%]">
+                        <div className="flex-none overflow-y-auto max-h-[40vh] font-sourgummy text-white bg-black border-2 rounded-lg w-full md:h-[40%] h-[20%] my-[6%]">
                             <div className="text-center">
-                                Selfhosted Services / Tools / Toys
+                                Selfhosted
                             </div>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw</Link>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="https://invidious.yoshixi.net">Invidious</Link>
-                            <Link className="flex justify-center text-2xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="https://ctfd.yoshixi.net/">My CTFd</Link>
+                            <Link className="flex justify-center text-1xl md:text-2xl lg:text-3xl mx-10 my-5 rounded-sm bg-gray-800 text-purple-500" href="https://excalidraw.yoshixi.net/">Excalidraw</Link>
+                            <Link className="flex justify-center text-1xl md:text-2xl lg:text-3xl mx-10 my-5 rounded-sm bg-gray-800 text-red-500" href="https://invidious.yoshixi.net">Invidious</Link>
+                            <Link className="flex justify-center text-1xl md:text-2xl lg:text-3xl mx-10 my-5 rounded-sm bg-gray-800 text-green-500" href="https://ctfd.yoshixi.net/">My CTFd</Link>
                         </div> 
                         <div className="flex-grow font-sourgummy text-white bg-black border-2 rounded-lg w-full mb-[6%]">
                             
