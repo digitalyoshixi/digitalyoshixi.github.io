@@ -52,7 +52,7 @@ export default function PageLayout( { title, children } ){
                         </div>
                     </div>
                     <div className="flex flex-col w-1/5 mx-[1%] justify-center items-center">
-                        <Link href="https://digitalyoshixi.github.io/zettelkasten/" className="flex-row flex text-center font-sourgummy text-white bg-black border-2 rounded-lg my-[7%] md:h-[5%] h-[10%] w-[60%] mx-auto">
+                        <Link href="https://zettelkasten.yoshixi.net" className="flex-row flex text-center font-sourgummy text-white bg-black border-2 rounded-lg my-[7%] md:h-[5%] h-[10%] w-[60%] mx-auto">
                                 <img className="p-1" src="/images/obsidian.png"></img>
                                 <p className="text-purple-300 ml-2">Zettelkasten</p>
                         </Link> 
