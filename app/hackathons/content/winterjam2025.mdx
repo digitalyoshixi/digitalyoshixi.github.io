@@ -1,0 +1,187 @@
+---
+title : "Winter Gamejam 2025"
+author : "Yoshixi"
+publishDate : "01/07/2026"
+summary : "We make a metroidvania game that is really hard! harder than darksouls!"
+hackathonImg : "/hackathons/winterjam2025/winterjam2025logo.png"
+projectImg : "/hackathons/winterjam2025/nicelogo.png"
+hackathonUrl : "https://itch.io/jam/wgj25/rate/4167289"
+projectUrl : "https://2635266513.itch.io/an-ices-adventure"
+textColor : "text-blue-800"
+---
+
+import Link from 'next/link'
+
+This is a devlog about Winter Game Jam 2025
+
+We built this game as a team of 6:
+- [https://2635266513.itch.io/](https://2635266513.itch.io/)
+- [https://github.com/the-kido](https://github.com/the-kido)
+- [https://heptagonal.itch.io/](https://heptagonal.itch.io/)
+- [https://amai-ichigo.itch.io/](https://amai-ichigo.itch.io/)
+- [https://itch.io/profile/fever01](https://itch.io/profile/fever01)
+- [https://yoshixi.itch.io/](https://yoshixi.itch.io/)
+
+You can play the game here:
+[https://itch.io/jam/touhou-jam-16/rate/3989974](https://itch.io/jam/touhou-jam-16/rate/3989974)
+
+You can view the trailer of our game here:
+
+# Ideating
+We built this during winter break after exams, there were a few ideas we had before setting down on our main idea.
+We came up with most of these ideas before the theme of the gamejam was revealed.
+
+There were a few requirements we had:
+- Must be a 2D game - none of us had made any 3D games before
+- Must be written in Godot, as we are most familiar with Godot.
+- Must be finished within 12 days
+
+### Into-the-breach style protect the flame turn based tactics
+I had an idea for a roguelike game that involves players protecting a fire from a wave of aliens on a ice planet.
+player controls units that have abilities to push, freeze, damage enemies similar to into-the breach.
+
+There would be a shop system to allow unit upgrades or new units be purchased.
+
+But, uh, this idea only realy makes sense if you've played into the breach.
+![v1](/hackathons/winterjam2025/gameidea1.png)
+
+### Freeze Tag
+Game idea two is freeze tag, we make a multiplayer online game of freeze tag. Damn this sounds difficult.
+![v1](/hackathons/winterjam2025/gameidea2.png)
+
+### Ice-physics based platformer puzzle game
+Lumiere thought about making a puzzle game with ice physics being integral to the physics. It seemed to be momentum based and with two options: to freeze and to move.
+![v1](/hackathons/winterjam2025/gameidea3.png)
+
+### Dont-starve roguelike game
+Another idea we had was to make a survival top-down game that had gameplay similar to dont starve. Roam around the world during daytime collecting resources and try to survive the night near your bonfire.
+![v1](/hackathons/winterjam2025/gameidea4.png)
+
+### Metroidvania open world
+This is a sidescroller metroidvania - similar to hyperlight drifter in gameplay and content.
+Players move around a 2d world and backtrack to previous areas after ability unlock.
+Admittedly, this was a larger project but it had the most room for creative experimentation of ideas.
+![v1](/hackathons/winterjam2025/gameidea5.png)
+There would be:
+- Multiple biomes
+- Multiple boss fights
+- Unlockable abilities: dash, freeze
+- Unique enemies
+It was a large project, but we also had many people and 12 days to work on this. 
+
+We had to setup the initial framework of the game, and a few placeholder worlds. 
+
+But that was the hard part. After we had the map system and enemy systems setup, we could use object oriented programming to quickly add new content based off the templates.
+
+# Minimum Viable Product
+At a minimum:
+- player movement
+- player attack
+- 2 enemies
+- 1 boss
+- 1 biome
+- 1 ability unlock
+
+# Progress
+So, we had 12 days to build a project. We started by tracking everything inside a massive excalidraw document. 
+
+This is that it looked like initially:
+drawing>
+
+Sooner or later, this became too much to manage. Excalidraw has an upper limit on the amount of content that can be saved to the database, probably 5MB that was immediately used up by us drawing out the game world.
+Its important to realize that the real purpose of a whiteboard is to ideate and brainstorm. Using it as any permanent storage for tasks is a bad idea.
+
+So, we setup a trello to document game systems and todo lists.
+drawing>
+
+### Day 1
+- Lumiere setup player character, camera, player movement, attack, basic slime enemy
+
+![v1](/hackathons/winterjam2025/v1.png)
+
+### Day 2
+- Kido setup lighting, z-indexing of the world, fridge
+- I setup particle effects, tilesets and shaders for game world
+![v2](/hackathons/winterjam2025/v2.png)
+
+### Day 3
+- Lumiere setup the first world
+- Kido setup enemy pathfinding
+![v3](/hackathons/winterjam2025/v3.png)
+
+### Day 4
+- Kido setup wolf enemy
+- Kido setup objects for game world: trees, fence, etc
+- Lumiere setup scene change on enter different worlds and a few different worlds
+
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/v4.mp4" type="video/mp4"/>
+</video>
+
+### Day 5/6
+- Kido setup pause menu
+- Kido added bunch of enemies
+- Cheesers setup pause menu effects
+- Lumiere fixed a buncha stuff, added debug mod
+- I added coins, save system, extra worlds
+
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/v5.mp4" type="video/mp4"/>
+</video>
+
+### Day 7/8
+- Lumiere added a buncha songs
+- Kido added dashing, death screen, a bunch of enemies (snowman, ice summoner)
+- I setup snowball enemy and snowball boss fight
+
+Heres a showcase of some enemies:
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/v6.mp4" type="video/mp4"/>
+</video>
+
+The music is really great, you can download some from the repository: https://github.com/swag-indie-projects/a-n-ice-game/tree/main/a-n--ice-game/sounds/ost
+
+### Day 9/10
+- Kido and Lumiere setup altar to give users abilities
+- Lumiere setup second biome world
+- Lumiere added a bunch of music
+- I modified save system and added boss ui, and new witch boss
+- I setup a few biome 2 tilesets and objects
+- I added shop system
+- Kido fixed a few bugs in boss two and added assets for witch boss
+
+Heres a view of biome two:
+
+Heres a view of the shop:
+![v3](/hackathons/winterjam2025/shop.png)
+
+Heres a view of the altars:
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/altar.mp4" type="video/mp4"/>
+</video>
+
+Heres a view of the previous snowball boss:
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/snowball_boss.mp4" type="video/mp4"/>
+</video>
+
+Heres a view of the new witch boss:
+<video width="640" height="440" controls>
+  <source src="/hackathons/winterjam2025/witch_boss.mp4" type="video/mp4"/>
+</video>
+
+### Day 11/12
+- Playtesting
+- Added cutscenes
+- Fixed a bunch of bugs
+- Played a bunch of games
+- Cheesers finished a trailer, you can see it here: [https://www.youtube.com/watch?v=wpGMXEjqiuA](https://www.youtube.com/watch?v=wpGMXEjqiuA)
+
+# Gamejam Results
+We played a bunch of games submitte during the jam to improve our 'karma'. Apparently 'karma' impacts how likely your game is to show up at the top of the jam list.
+There were a few good ones that I played:
+- [A heist game with ice physics](https://itch.io/jam/wgj25/rate/4163785)
+- [A driving 3d game about plowing snow](https://itch.io/jam/wgj25/rate/4168073)
+- [A ice archeology game](https://itch.io/jam/wgj25/rate/4164337)
+
+We ended up ranking 14th place in total, which is ok considering it is one of our first gamejams.
